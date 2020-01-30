@@ -1,0 +1,2252 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+  <link rel="dns-prefetch" href="https://github.githubassets.com/">
+  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com/">
+  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+
+
+
+  <link crossorigin="anonymous" media="all" integrity="sha512-ouI5UScWVQasLY7xrTyxOmvoOYEdJ7Mr2jttdNrXlazKaQP8ODIVxoAZQvTYh8kn0PmonJfuY6TOSepXEblj+w==" rel="stylesheet" href="./intro_git_files/frameworks-a2e2395127165506ac2d8ef1ad3cb13a.css">
+  
+    <link crossorigin="anonymous" media="all" integrity="sha512-H/ttFYVGKC0nBekmKtjOydAfxyu0nMLxidica8y7K8ZrtdZ6hgsPtHO/Y1n+i4H3MBjWE1FDQZmVfR7yOkbAfg==" rel="stylesheet" href="./intro_git_files/github-1ffb6d158546282d2705e9262ad8cec9.css">
+    
+    
+    
+    
+
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>the-unix-workbench/06-Git-and-GitHub.md at master · seankross/the-unix-workbench</title>
+    <meta name="description" content=":house_with_garden: A Book for Anyone to Get Started with Unix - seankross/the-unix-workbench">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    <meta name="twitter:image:src" content="https://avatars2.githubusercontent.com/u/1819813?s=400&amp;v=4"><meta name="twitter:site" content="@github"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="seankross/the-unix-workbench"><meta name="twitter:description" content=":house_with_garden: A Book for Anyone to Get Started with Unix - seankross/the-unix-workbench">
+    <meta property="og:image" content="https://avatars2.githubusercontent.com/u/1819813?s=400&amp;v=4"><meta property="og:site_name" content="GitHub"><meta property="og:type" content="object"><meta property="og:title" content="seankross/the-unix-workbench"><meta property="og:url" content="https://github.com/seankross/the-unix-workbench"><meta property="og:description" content=":house_with_garden: A Book for Anyone to Get Started with Unix - seankross/the-unix-workbench">
+
+  <link rel="assets" href="https://github.githubassets.com/">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6NDkzNjgyMzQyOjZmZDI4NzlhMjNlOTNlNTZiMzM2OGFjM2M4Zjg0MTVkODA5YTQ5ZGY5YjE1Yzg5NTI2OTNhZTgyMWQwNjU4ODE=--6d6e676a55b4b3b2080ce301caa22f414a7b09b8">
+  <link rel="sudo-modal" href="https://github.com/sessions/sudo_modal">
+
+    <meta name="request-id" content="F3CF:4E1C:378E2:69854:5E33005D" data-pjax-transient="true"><meta name="html-safe-nonce" content="6933bbabdae05b6fca8891035eb17c0d90dc1991" data-pjax-transient="true"><meta name="visitor-payload" content="eyJyZWZlcnJlciI6bnVsbCwicmVxdWVzdF9pZCI6IkYzQ0Y6NEUxQzozNzhFMjo2OTg1NDo1RTMzMDA1RCIsInZpc2l0b3JfaWQiOiIzNTYwNjYxODU4NTc5Nzk5NTg0IiwicmVnaW9uX2VkZ2UiOiJpYWQiLCJyZWdpb25fcmVuZGVyIjoiaWFkIn0=" data-pjax-transient="true"><meta name="visitor-hmac" content="58a0697100d86135ef25850a2a9aff8b1da7545582a013010abe6079ea30ea43" data-pjax-transient="true">
+
+
+
+  
+
+  <meta name="selected-link" value="repo_source" data-pjax-transient="">
+
+      <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+    <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
+
+  <meta name="octolytics-host" content="collector.githubapp.com"><meta name="octolytics-app-id" content="github"><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event"><meta name="octolytics-dimension-ga_id" content="803986347.1575902752" class="js-octo-ga-id"><meta name="octolytics-actor-id" content="54865871"><meta name="octolytics-actor-login" content="JasmineZhen218"><meta name="octolytics-actor-hash" content="d30e2b91662340a13b3a1f6e3d9ee2b68aa85959d295e703f04ab25f441763ae">
+<meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true">
+
+
+
+    <meta name="google-analytics" content="UA-3769691-2">
+
+  <meta class="js-ga-set" name="userId" content="239ba34f3f16011f8b5824c93bc7900f">
+
+<meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+
+  
+
+      <meta name="hostname" content="github.com">
+    <meta name="user-login" content="JasmineZhen218">
+
+      <meta name="expected-hostname" content="github.com">
+
+      <meta name="js-proxy-site-detection-payload" content="OGVjYzVjYjY1ZWZlYzI4NjY4ZTA1ZGEzMGVmNmM4ZDY2MDE1NjVmZmY1OWE0ZjQ2ZWI4NzA4YzVhYzFiODMyNnx7InJlbW90ZV9hZGRyZXNzIjoiMTYyLjEyOS4yNTEuODUiLCJyZXF1ZXN0X2lkIjoiRjNDRjo0RTFDOjM3OEUyOjY5ODU0OjVFMzMwMDVEIiwidGltZXN0YW1wIjoxNTgwNDAwNzMzLCJob3N0IjoiZ2l0aHViLmNvbSJ9">
+
+    <meta name="enabled-features" content="MARKETPLACE_FEATURED_BLOG_POSTS,MARKETPLACE_INVOICED_BILLING,MARKETPLACE_SOCIAL_PROOF_CUSTOMERS,MARKETPLACE_TRENDING_SOCIAL_PROOF,MARKETPLACE_RECOMMENDATIONS,MARKETPLACE_PENDING_INSTALLATIONS,NOTIFY_ON_BLOCK,RELATED_ISSUES,GHE_CLOUD_TRIAL">
+
+  <meta http-equiv="x-pjax-version" content="371992d4e89f9bdac61355741bd5eb24">
+  
+
+      <link href="https://github.com/seankross/the-unix-workbench/commits/master.atom" rel="alternate" title="Recent Commits to the-unix-workbench:master" type="application/atom+xml">
+
+  <meta name="go-import" content="github.com/seankross/the-unix-workbench git https://github.com/seankross/the-unix-workbench.git">
+
+  <meta name="octolytics-dimension-user_id" content="1819813"><meta name="octolytics-dimension-user_login" content="seankross"><meta name="octolytics-dimension-repository_id" content="70629065"><meta name="octolytics-dimension-repository_nwo" content="seankross/the-unix-workbench"><meta name="octolytics-dimension-repository_public" content="true"><meta name="octolytics-dimension-repository_is_fork" content="false"><meta name="octolytics-dimension-repository_network_root_id" content="70629065"><meta name="octolytics-dimension-repository_network_root_nwo" content="seankross/the-unix-workbench"><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false">
+
+
+    <link rel="canonical" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md" data-pjax-transient="">
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://github.githubassets.com/pinned-octocat.svg" color="#000000">
+  <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://github.githubassets.com/favicon.ico">
+
+<meta name="theme-color" content="#1e2327">
+
+
+  <link rel="manifest" href="https://github.com/manifest.json" crossorigin="use-credentials">
+
+  </head>
+
+  <body class="logged-in env-production page-responsive page-blob">
+    
+
+  <div class="position-relative js-header-wrapper ">
+    <a href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#start-of-content" tabindex="1" class="p-3 bg-blue text-white show-on-focus js-skip-to-content">Skip to content</a>
+    <span class="Progress progress-pjax-loader position-fixed width-full js-pjax-loader-bar">
+      <span class="progress-pjax-loader-bar top-0 left-0" style="width: 0%;"></span>
+    </span>
+
+    
+    
+    
+
+
+          <header class="Header js-details-container Details flex-wrap flex-lg-nowrap p-responsive" role="banner">
+
+    <div class="Header-item d-none d-lg-flex">
+      <a class="Header-link" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+  <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+</a>
+
+    </div>
+
+    <div class="Header-item d-lg-none">
+      <button class="Header-link btn-link js-details-target" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 12 16" version="1.1" width="18" aria-hidden="true"><path fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"></path></svg>
+      </button>
+    </div>
+
+    <div class="Header-item Header-item--full flex-column flex-lg-row width-full flex-order-2 flex-lg-order-none mr-0 mr-lg-3 mt-3 mt-lg-0 Details-content--hidden">
+        <div class="header-search flex-self-stretch flex-lg-self-auto mr-0 mr-lg-3 mb-3 mb-lg-0 scoped-search site-scoped-search js-site-search position-relative js-jump-to" role="combobox" aria-owns="jump-to-results" aria-label="Search or jump to" aria-haspopup="listbox" aria-expanded="false">
+  <div class="position-relative">
+    <!-- '"` --><!-- </textarea></xmp> --><form class="js-site-search-form" role="search" aria-label="Site" data-scope-type="Repository" data-scope-id="70629065" data-scoped-search-url="/seankross/the-unix-workbench/search" data-unscoped-search-url="/search" action="https://github.com/seankross/the-unix-workbench/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+      <label class="form-control input-sm header-search-wrapper p-0 header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center js-chromeless-input-container">
+        <input type="text" class="form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable" data-hotkey="s,/" name="q" value="" placeholder="Search or jump to…" data-unscoped-placeholder="Search or jump to…" data-scoped-placeholder="Search or jump to…" autocapitalize="off" aria-autocomplete="list" aria-controls="jump-to-results" aria-label="Search or jump to…" data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations" spellcheck="false" autocomplete="off">
+            <input type="hidden" value="oP/Mm6Zd0ZAGSUg9TnaKNJ8nVr5xt3h7eI0lQaWzE7b0458BDDBsENifRHgD7NTw9zbi8U9OycSH833GpEvbfw==" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf">
+          <input type="hidden" class="js-site-search-type-field" name="type">
+            <img src="./intro_git_files/search-key-slash.svg" alt="" class="mr-2 header-search-key-slash">
+
+            <div class="Box position-absolute overflow-hidden d-none jump-to-suggestions js-jump-to-suggestions-container">
+              
+<ul class="d-none js-jump-to-suggestions-template-container">
+  
+
+<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-suggestion" role="option">
+  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md">
+    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 00-1 1v14a1 1 0 001 1h13a1 1 0 001-1V1a1 1 0 00-1-1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0013 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 000-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path></svg>
+    </div>
+
+    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md" width="28" height="28">
+
+    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+    </div>
+
+    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+        In this repository
+      </span>
+      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+        All GitHub
+      </span>
+      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+
+    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+      Jump to
+      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+  </a>
+</li>
+
+</ul>
+
+<ul class="d-none js-jump-to-no-results-template-container">
+  <li class="d-flex flex-justify-center flex-items-center f5 d-none js-jump-to-suggestion p-2">
+    <span class="text-gray">No suggested jump to results</span>
+  </li>
+</ul>
+
+<ul id="jump-to-results" role="listbox" class="p-0 m-0 js-navigation-container jump-to-suggestions-results-container js-jump-to-suggestions-results-container">
+  
+
+<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-scoped-search d-none" role="option">
+  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md">
+    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 00-1 1v14a1 1 0 001 1h13a1 1 0 001-1V1a1 1 0 00-1-1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0013 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 000-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path></svg>
+    </div>
+
+    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md" width="28" height="28">
+
+    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+    </div>
+
+    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+        In this repository
+      </span>
+      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+        All GitHub
+      </span>
+      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+
+    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+      Jump to
+      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+  </a>
+</li>
+
+  
+
+<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-global-search d-none" role="option">
+  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md">
+    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 00-1 1v14a1 1 0 001 1h13a1 1 0 001-1V1a1 1 0 00-1-1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0013 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 000-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path></svg>
+    </div>
+
+    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md" width="28" height="28">
+
+    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+    </div>
+
+    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+        In this repository
+      </span>
+      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+        All GitHub
+      </span>
+      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+
+    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+      Jump to
+      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+  </a>
+</li>
+
+
+    <li class="d-flex flex-justify-center flex-items-center p-0 f5 js-jump-to-suggestion">
+      <img src="./intro_git_files/octocat-spinner-128.gif" alt="Octocat Spinner Icon" class="m-2" width="28">
+    </li>
+</ul>
+
+            </div>
+      </label>
+</form>  </div>
+</div>
+
+
+      <nav class="d-flex flex-column flex-lg-row flex-self-stretch flex-lg-self-auto" aria-label="Global">
+    <a class="Header-link d-block d-lg-none py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15" data-ga-click="Header, click, Nav menu - item:dashboard:user" aria-label="Dashboard" href="https://github.com/dashboard">
+      Dashboard
+</a>
+
+  <a class="js-selected-navigation-item Header-link  mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15" data-hotkey="g p" data-ga-click="Header, click, Nav menu - item:pulls context:user" aria-label="Pull requests you created" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls" href="https://github.com/pulls">
+    Pull requests
+</a>
+  <a class="js-selected-navigation-item Header-link  mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15" data-hotkey="g i" data-ga-click="Header, click, Nav menu - item:issues context:user" aria-label="Issues you created" data-selected-links="/issues /issues/assigned /issues/mentioned /issues" href="https://github.com/issues">
+    Issues
+</a>
+    <div class="mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15">
+      <a class="js-selected-navigation-item Header-link" data-ga-click="Header, click, Nav menu - item:marketplace context:user" data-octo-click="marketplace_click" data-octo-dimensions="location:nav_bar" data-selected-links=" /marketplace" href="https://github.com/marketplace">
+        Marketplace
+</a>      
+
+    </div>
+
+  <a class="js-selected-navigation-item Header-link  mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore" href="https://github.com/explore">
+    Explore
+</a>
+
+
+    <a class="Header-link d-block d-lg-none mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15" href="https://github.com/JasmineZhen218">
+      <img class="avatar" height="20" width="20" alt="@JasmineZhen218" src="./intro_git_files/54865871">
+      JasmineZhen218
+</a>
+    <!-- '"` --><!-- </textarea></xmp> --><form action="https://github.com/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="APWj+dBg5QOUtqxq7l+TOH89QfxJTMFMbMQREjQ+XO7+K7Bzy5DXq2hN4fWYT4PapbWYTKsARFL3rv4n40frGw==">
+      <button type="submit" class="Header-link mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15 d-lg-none btn-link d-block width-full text-left" data-ga-click="Header, sign out, icon:logout" style="padding-left: 2px;">
+        <svg class="octicon octicon-sign-out v-align-middle" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9V7H8V5h4V3l4 3-4 3zm-2 3H6V3L2 1h8v3h1V1c0-.55-.45-1-1-1H1C.45 0 0 .45 0 1v11.38c0 .39.22.73.55.91L6 16.01V13h4c.55 0 1-.45 1-1V8h-1v4z"></path></svg>
+        Sign out
+      </button>
+</form></nav>
+
+    </div>
+
+    <div class="Header-item Header-item--full flex-justify-center d-lg-none position-relative">
+      <div class="css-truncate css-truncate-target width-fit position-absolute left-0 right-0 text-center">
+              <svg class="octicon octicon-repo" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+    <a class="Header-link" href="https://github.com/seankross">seankross</a>
+    /
+    <a class="Header-link" href="https://github.com/seankross/the-unix-workbench">the-unix-workbench</a>
+
+</div>
+    </div>
+
+
+    <div class="Header-item mr-0 mr-lg-3 flex-order-1 flex-lg-order-none">
+      
+
+    <a aria-label="You have no unread notifications" class="Header-link notification-indicator position-relative tooltipped tooltipped-sw js-socket-channel js-notification-indicator" data-hotkey="g n" data-ga-click="Header, go to notifications, icon:read" data-channel="notification-changed:54865871" href="https://github.com/notifications">
+        <span class="js-indicator-modifier mail-status "></span>
+        <svg class="octicon octicon-bell" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 12v1H0v-1l.73-.58c.77-.77.81-2.55 1.19-4.42C2.69 3.23 6 2 6 2c0-.55.45-1 1-1s1 .45 1 1c0 0 3.39 1.23 4.16 5 .38 1.88.42 3.66 1.19 4.42l.66.58H14zm-7 4c1.11 0 2-.89 2-2H5c0 1.11.89 2 2 2z"></path></svg>
+</a>
+    </div>
+
+
+    <div class="Header-item position-relative d-none d-lg-flex">
+      <details class="details-overlay details-reset">
+  <summary class="Header-link" aria-label="Create new…" data-ga-click="Header, create new, icon:add" aria-haspopup="menu" role="button">
+    <svg class="octicon octicon-plus" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z"></path></svg> <span class="dropdown-caret"></span>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw" role="menu">
+    
+<a role="menuitem" class="dropdown-item" href="https://github.com/new" data-ga-click="Header, create new repository">
+  New repository
+</a>
+
+  <a role="menuitem" class="dropdown-item" href="https://github.com/new/import" data-ga-click="Header, import a repository">
+    Import repository
+  </a>
+
+<a role="menuitem" class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, create new gist">
+  New gist
+</a>
+
+  <a role="menuitem" class="dropdown-item" href="https://github.com/organizations/new" data-ga-click="Header, create new organization">
+    New organization
+  </a>
+
+
+  <div role="none" class="dropdown-divider"></div>
+  <div class="dropdown-header">
+    <span title="seankross/the-unix-workbench">This repository</span>
+  </div>
+    <a role="menuitem" class="dropdown-item" href="https://github.com/seankross/the-unix-workbench/issues/new" data-ga-click="Header, create new issue" data-skip-pjax="">
+      New issue
+    </a>
+
+
+  </details-menu>
+</details>
+
+    </div>
+
+    <div class="Header-item position-relative mr-0 d-none d-lg-flex">
+      
+  <details class="details-overlay details-reset js-feature-preview-indicator-container" data-feature-preview-indicator-src="/users/JasmineZhen218/feature_preview/indicator_check.json">
+
+  <summary class="Header-link" aria-label="View profile and more" data-ga-click="Header, show menu, icon:avatar" aria-haspopup="menu" role="button">
+    <img alt="@JasmineZhen218" class="avatar" src="./intro_git_files/54865871(1)" height="20" width="20">
+      <span class="feature-preview-indicator js-feature-preview-indicator"></span>
+    <span class="dropdown-caret"></span>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw mt-2" style="width: 180px" role="menu">
+    <div class="header-nav-current-user css-truncate"><a role="menuitem" class="no-underline user-profile-link px-3 pt-2 pb-2 mb-n2 mt-n1 d-block" href="https://github.com/JasmineZhen218" data-ga-click="Header, go to profile, text:Signed in as">Signed in as <strong class="css-truncate-target">JasmineZhen218</strong></a></div>
+    <div role="none" class="dropdown-divider"></div>
+
+      <div class="pl-3 pr-3 f6 user-status-container js-user-status-context pb-1" data-url="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1">
+        
+<div class="js-user-status-container
+    user-status-compact rounded-1 px-2 py-1 mt-2
+    border
+  " data-team-hovercards-enabled="">
+  <details class="js-user-status-details details-reset details-overlay details-overlay-dark">
+    <summary class="btn-link btn-block link-gray no-underline js-toggle-user-status-edit toggle-user-status-edit " role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:1819813,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:54865871,&quot;originating_url&quot;:&quot;https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md&quot;}}" data-hydro-click-hmac="82a3ac1b4578b363af724d4e4896d34b19a415896213a2fbc6862816df2ec8ad">
+      <div class="d-flex">
+        <div class="f6 lh-condensed user-status-header
+          d-inline-block v-align-middle
+            user-status-emoji-only-header circle
+            pr-2
+" style="max-width: 29px">
+          <div class="user-status-emoji-container flex-shrink-0 mr-1 mt-1 lh-condensed-ultra v-align-bottom" style="">
+            <svg class="octicon octicon-smiley" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm4.81 12.81a6.72 6.72 0 01-2.17 1.45c-.83.36-1.72.53-2.64.53-.92 0-1.81-.17-2.64-.53-.81-.34-1.55-.83-2.17-1.45a6.773 6.773 0 01-1.45-2.17A6.59 6.59 0 011.21 8c0-.92.17-1.81.53-2.64.34-.81.83-1.55 1.45-2.17.62-.62 1.36-1.11 2.17-1.45A6.59 6.59 0 018 1.21c.92 0 1.81.17 2.64.53.81.34 1.55.83 2.17 1.45.62.62 1.11 1.36 1.45 2.17.36.83.53 1.72.53 2.64 0 .92-.17 1.81-.53 2.64-.34.81-.83 1.55-1.45 2.17zM4 6.8v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2H5.2C4.53 8 4 7.47 4 6.8zm5 0v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2h-.59C9.53 8 9 7.47 9 6.8zm4 3.2c-.72 1.88-2.91 3-5 3s-4.28-1.13-5-3c-.14-.39.23-1 .66-1h8.59c.41 0 .89.61.75 1z"></path></svg>
+          </div>
+        </div>
+        <div class="
+          d-inline-block v-align-middle
+          
+          
+           css-truncate css-truncate-target 
+           user-status-message-wrapper f6" style="line-height: 20px;">
+          <div class="d-inline-block text-gray-dark v-align-text-top text-left">
+              <span class="text-gray ml-2">Set status</span>
+          </div>
+        </div>
+      </div>
+    </summary>
+    <details-dialog class="details-dialog rounded-1 anim-fade-in fast Box Box--overlay" role="dialog" tabindex="-1" aria-modal="true">
+      <!-- '"` --><!-- </textarea></xmp> --><form class="position-relative flex-auto js-user-status-form" action="https://github.com/users/status?compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="toyNvW/A+85XDoqw0QA70DduWZ3WMxKw+QyHmP5bpVWKFno3Ws6HENU3v51wBsIbVWZntnys0mpOtLEXl0fdGQ==">
+        <div class="Box-header bg-gray border-bottom p-3">
+          <button class="Box-btn-octicon js-toggle-user-status-edit btn-octicon float-right" type="reset" aria-label="Close dialog" data-close-dialog="">
+            <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+          </button>
+          <h3 class="Box-title f5 text-bold text-gray-dark">Edit status</h3>
+        </div>
+        <input type="hidden" name="emoji" class="js-user-status-emoji-field" value="">
+        <input type="hidden" name="organization_id" class="js-user-status-org-id-field" value="">
+        <div class="px-3 py-2 text-gray-dark">
+          <div class="js-characters-remaining-container position-relative mt-2">
+            <div class="input-group d-table form-group my-0 js-user-status-form-group">
+              <span class="input-group-button d-table-cell v-align-middle" style="width: 1%">
+                <button type="button" aria-label="Choose an emoji" class="btn-outline btn js-toggle-user-status-emoji-picker btn-open-emoji-picker p-0">
+                  <span class="js-user-status-original-emoji" hidden=""></span>
+                  <span class="js-user-status-custom-emoji"></span>
+                  <span class="js-user-status-no-emoji-icon">
+                    <svg class="octicon octicon-smiley" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm4.81 12.81a6.72 6.72 0 01-2.17 1.45c-.83.36-1.72.53-2.64.53-.92 0-1.81-.17-2.64-.53-.81-.34-1.55-.83-2.17-1.45a6.773 6.773 0 01-1.45-2.17A6.59 6.59 0 011.21 8c0-.92.17-1.81.53-2.64.34-.81.83-1.55 1.45-2.17.62-.62 1.36-1.11 2.17-1.45A6.59 6.59 0 018 1.21c.92 0 1.81.17 2.64.53.81.34 1.55.83 2.17 1.45.62.62 1.11 1.36 1.45 2.17.36.83.53 1.72.53 2.64 0 .92-.17 1.81-.53 2.64-.34.81-.83 1.55-1.45 2.17zM4 6.8v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2H5.2C4.53 8 4 7.47 4 6.8zm5 0v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2h-.59C9.53 8 9 7.47 9 6.8zm4 3.2c-.72 1.88-2.91 3-5 3s-4.28-1.13-5-3c-.14-.39.23-1 .66-1h8.59c.41 0 .89.61.75 1z"></path></svg>
+                  </span>
+                </button>
+              </span>
+              <text-expander keys=": @" data-mention-url="/autocomplete/user-suggestions" data-emoji-url="/autocomplete/emoji">
+                <input type="text" autocomplete="off" data-no-org-url="/autocomplete/user-suggestions" data-org-url="/suggestions?mention_suggester=1" data-maxlength="80" class="d-table-cell width-full form-control js-user-status-message-field js-characters-remaining-field" placeholder="What&#39;s happening?" name="message" value="" aria-label="What is your current status?">
+              </text-expander>
+              <div class="error">Could not update your status, please try again.</div>
+            </div>
+            <div style="margin-left: 53px" class="my-1 text-small label-characters-remaining js-characters-remaining" data-suffix="remaining" hidden="">
+              80 remaining
+            </div>
+          </div>
+          <include-fragment class="js-user-status-emoji-picker" data-url="/users/status/emoji"></include-fragment>
+          <div class="overflow-auto ml-n3 mr-n3 px-3 border-bottom" style="max-height: 33vh">
+            <div class="user-status-suggestions js-user-status-suggestions collapsed overflow-hidden">
+              <h4 class="f6 text-normal my-3">Suggestions:</h4>
+              <div class="mx-3 mt-2 clearfix">
+                  <div class="float-left col-6">
+                      <button type="button" value=":palm_tree:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
+                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                          <g-emoji alias="palm_tree" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f334.png">🌴</g-emoji>
+                        </div>
+                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
+                          On vacation
+                        </div>
+                      </button>
+                      <button type="button" value=":face_with_thermometer:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
+                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                          <g-emoji alias="face_with_thermometer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f912.png">🤒</g-emoji>
+                        </div>
+                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
+                          Out sick
+                        </div>
+                      </button>
+                  </div>
+                  <div class="float-left col-6">
+                      <button type="button" value=":house:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
+                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                          <g-emoji alias="house" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e0.png">🏠</g-emoji>
+                        </div>
+                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
+                          Working from home
+                        </div>
+                      </button>
+                      <button type="button" value=":dart:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
+                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                          <g-emoji alias="dart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3af.png">🎯</g-emoji>
+                        </div>
+                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
+                          Focusing
+                        </div>
+                      </button>
+                  </div>
+              </div>
+            </div>
+            <div class="user-status-limited-availability-container">
+              <div class="form-checkbox my-0">
+                <input type="checkbox" name="limited_availability" value="1" class="js-user-status-limited-availability-checkbox" data-default-message="I may be slow to respond." aria-describedby="limited-availability-help-text-truncate-true-compact-true" id="limited-availability-truncate-true-compact-true">
+                <label class="d-block f5 text-gray-dark mb-1" for="limited-availability-truncate-true-compact-true">
+                  Busy
+                </label>
+                <p class="note" id="limited-availability-help-text-truncate-true-compact-true">
+                  When others mention you, assign you, or request your review,
+                  GitHub will let them know that you have limited availability.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="d-inline-block f5 mr-2 pt-3 pb-2">
+  <div class="d-inline-block mr-1">
+    Clear status
+  </div>
+
+  <details class="js-user-status-expire-drop-down f6 dropdown details-reset details-overlay d-inline-block mr-2">
+    <summary class="f5 btn-link link-gray-dark border px-2 py-1 rounded-1" aria-haspopup="true">
+      <div class="js-user-status-expiration-interval-selected d-inline-block v-align-baseline">
+        Never
+      </div>
+      <div class="dropdown-caret"></div>
+    </summary>
+
+    <ul class="dropdown-menu dropdown-menu-se pl-0 overflow-auto" style="width: 220px; max-height: 15.5em">
+      <li>
+        <button type="button" class="btn-link dropdown-item js-user-status-expire-button ws-normal" title="Never">
+          <span class="d-inline-block text-bold mb-1">Never</span>
+          <div class="f6 lh-condensed">Keep this status until you clear your status or edit your status.</div>
+        </button>
+      </li>
+      <li class="dropdown-divider" role="none"></li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 30 minutes" value="2020-01-30T11:42:13-05:00">
+            in 30 minutes
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 1 hour" value="2020-01-30T12:12:13-05:00">
+            in 1 hour
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 4 hours" value="2020-01-30T15:12:13-05:00">
+            in 4 hours
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="today" value="2020-01-30T23:59:59-05:00">
+            today
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="this week" value="2020-02-02T23:59:59-05:00">
+            this week
+          </button>
+        </li>
+    </ul>
+  </details>
+  <input class="js-user-status-expiration-date-input" type="hidden" name="expires_at" value="">
+</div>
+
+          <include-fragment class="js-user-status-org-picker" data-url="/users/status/organizations"></include-fragment>
+        </div>
+        <div class="d-flex flex-items-center flex-justify-between p-3 border-top">
+          <button type="submit" disabled="" class="width-full btn btn-primary mr-2 js-user-status-submit">
+            Set status
+          </button>
+          <button type="button" disabled="" class="width-full js-clear-user-status-button btn ml-2 ">
+            Clear status
+          </button>
+        </div>
+</form>    </details-dialog>
+  </details>
+</div>
+
+      </div>
+      <div role="none" class="dropdown-divider"></div>
+
+
+    <a role="menuitem" class="dropdown-item" href="https://github.com/JasmineZhen218" data-ga-click="Header, go to profile, text:your profile">Your profile</a>
+
+    <a role="menuitem" class="dropdown-item" href="https://github.com/JasmineZhen218?tab=repositories" data-ga-click="Header, go to repositories, text:your repositories">Your repositories</a>
+
+    <a role="menuitem" class="dropdown-item" href="https://github.com/JasmineZhen218?tab=projects" data-ga-click="Header, go to projects, text:your projects">Your projects</a>
+
+    <a role="menuitem" class="dropdown-item" href="https://github.com/JasmineZhen218?tab=stars" data-ga-click="Header, go to starred repos, text:your stars">Your stars</a>
+      <a role="menuitem" class="dropdown-item" href="https://gist.github.com/mine" data-ga-click="Header, your gists, text:your gists">Your gists</a>
+
+
+
+
+
+    <div role="none" class="dropdown-divider"></div>
+      
+<div id="feature-enrollment-toggle" class="hide-sm hide-md feature-preview-details position-relative">
+  <button type="button" class="dropdown-item btn-link" role="menuitem" data-feature-preview-trigger-url="/users/JasmineZhen218/feature_previews" data-feature-preview-close-details="{&quot;event_type&quot;:&quot;feature_preview.clicks.close_modal&quot;,&quot;payload&quot;:{&quot;originating_url&quot;:&quot;https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md&quot;,&quot;user_id&quot;:54865871}}" data-feature-preview-close-hmac="51d05e36f58deb6e89778a098bd2dc892131b0113a7e6aa9784f2363ad39358f" data-hydro-click="{&quot;event_type&quot;:&quot;feature_preview.clicks.open_modal&quot;,&quot;payload&quot;:{&quot;link_location&quot;:&quot;user_dropdown&quot;,&quot;originating_url&quot;:&quot;https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md&quot;,&quot;user_id&quot;:54865871}}" data-hydro-click-hmac="cd18250bcbd9eaed72bbc6487f1001152bce63d0f333349e1123132c64422bcd">
+    Feature preview
+  </button>
+    <span class="feature-preview-indicator js-feature-preview-indicator"></span>
+</div>
+
+    <a role="menuitem" class="dropdown-item" href="https://help.github.com/" data-ga-click="Header, go to help, text:help">Help</a>
+    <a role="menuitem" class="dropdown-item" href="https://github.com/settings/profile" data-ga-click="Header, go to settings, icon:settings">Settings</a>
+    <!-- '"` --><!-- </textarea></xmp> --><form class="logout-form" action="https://github.com/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="pPPNLBp4JLYatow0tXjMvxPULfp8XwOOAIMlxSI+JhdaLd6mAYgWHuZNwavDaNxdyVz0Sp4ThpCb6crw9UeR4g==">
+      
+      <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" role="menuitem">
+        Sign out
+      </button>
+      <input type="text" name="required_field_921a" hidden="hidden" class="form-control">
+<input type="hidden" name="timestamp" value="1580400733768" class="form-control">
+<input type="hidden" name="timestamp_secret" value="8b035ab05150c27838d57e4f0e698ef163cccd8a39ddd697325ff606e843032d" class="form-control">
+
+</form>  </details-menu>
+</details>
+
+    </div>
+
+  </header>
+
+      
+
+  </div>
+
+  <div id="start-of-content" class="show-on-focus"></div>
+
+
+    <div id="js-flash-container">
+
+</div>
+
+
+
+  <div class="application-main " data-commit-hovercards-enabled="">
+        <div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="">
+    <main>
+      
+
+  
+
+      <div class="border-bottom shelf intro-shelf js-notice mb-0 pb-4">
+  <div class="width-full container">
+    <div class="width-full mx-auto shelf-content">
+      <h2 class="shelf-title">Learn Git and GitHub without any code!</h2>
+      <p class="shelf-lead">
+          Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+      </p>
+      <a class="btn btn-primary shelf-cta" target="_blank" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;READ_GUIDE&quot;,&quot;repository_id&quot;:70629065,&quot;originating_url&quot;:&quot;https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md&quot;,&quot;user_id&quot;:54865871}}" data-hydro-click-hmac="f6d28961c8908d8c0dc119e590cd080af3c85605a609ebb6854846bd7826f39b" href="https://guides.github.com/activities/hello-world/">Read the guide</a>
+    </div>
+    <!-- '"` --><!-- </textarea></xmp> --><form class="shelf-dismiss js-notice-dismiss" action="https://github.com/dashboard/dismiss_bootcamp" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="delete"><input type="hidden" name="authenticity_token" value="hwaKFqL0Zich1+wxJISUsyaUSbq/E4DFSAsho7/Me4MykGRGQcyWgWn11Cqgvmi0wlYoolryvcalq44mIwhHxQ==">
+      <button name="button" type="submit" class="mr-1 close-button tooltipped tooltipped-w" aria-label="Hide this notice forever" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;DISMISS_BANNER&quot;,&quot;repository_id&quot;:70629065,&quot;originating_url&quot;:&quot;https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md&quot;,&quot;user_id&quot;:54865871}}" data-hydro-click-hmac="23542c80ac79b995082b2027c82010bca7627354acfc9408b0a73b493f4ebd6a">
+        <svg aria-label="Hide this notice forever" class="octicon octicon-x v-align-text-top" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+</button></form>  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+  <div class="pagehead repohead readability-menu experiment-repo-nav pt-0 pt-lg-3  pb-0">
+
+    <div class="container-lg mb-4 p-responsive d-none d-lg-flex">
+
+      <div class="flex-auto min-width-0 width-fit mr-3">
+        <h1 class="public  d-flex flex-wrap flex-items-center break-word float-none">
+    <svg class="octicon octicon-repo mr-1" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+  <span class="author" itemprop="author">
+    <a class="url fn" rel="author" data-hovercard-type="user" data-hovercard-url="/users/seankross/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/seankross">seankross</a>
+  </span>
+  <span class="path-divider">/</span>
+  <strong itemprop="name" class="mr-2">
+    <a data-pjax="#js-repo-pjax-container" href="https://github.com/seankross/the-unix-workbench">the-unix-workbench</a>
+  </strong>
+  
+</h1>
+
+
+      </div>
+
+      <ul class="pagehead-actions flex-shrink-0">
+
+
+
+
+  <li>
+    
+    <!-- '"` --><!-- </textarea></xmp> --><form data-remote="true" class="clearfix js-social-form js-social-container" action="https://github.com/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="zaAHRLIB4BeJ8IqjhKrV4Ema90P/M9CYCdeHya7YfaUHAf5HkxgaRBpmnShGCR7SVTe/jG8tdtoObJqTorU7kQ==">      <input type="hidden" name="repository_id" value="70629065">
+
+      <details class="details-reset details-overlay select-menu float-left">
+        <summary class="select-menu-button float-left btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:70629065,&quot;originating_url&quot;:&quot;https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md&quot;,&quot;user_id&quot;:54865871}}" data-hydro-click-hmac="382be70c45be806d6602867466eda226d6acf60c3e49f26ec7fa0f41b7f2bcad" data-ga-click="Repository, click Watch settings, action:blob#show" aria-haspopup="menu" role="button">          <span data-menu-button="">
+              <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+              Watch
+          </span>
+</summary>        <details-menu class="select-menu-modal position-absolute mt-5" style="z-index: 99;" role="menu">
+          <div class="select-menu-header">
+            <span class="select-menu-title">Notifications</span>
+          </div>
+          <div class="select-menu-list">
+            <button type="submit" name="do" value="included" class="select-menu-item width-full" aria-checked="true" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Not watching</span>
+                <span class="description">Be notified only when participating or @mentioned.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents="">
+                  <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+                  Watch
+                </span>
+              </div>
+            </button>
+
+            <button type="submit" name="do" value="release_only" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Releases only</span>
+                <span class="description">Be notified of new releases, and when participating or @mentioned.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents="">
+                  <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+                  Unwatch releases
+                </span>
+              </div>
+            </button>
+
+            <button type="submit" name="do" value="subscribed" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Watching</span>
+                <span class="description">Be notified of all conversations.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents="">
+                  <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+                  Unwatch
+                </span>
+              </div>
+            </button>
+
+            <button type="submit" name="do" value="ignore" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Ignoring</span>
+                <span class="description">Never be notified.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents="">
+                  <svg class="octicon octicon-mute v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 2.81v10.38c0 .67-.81 1-1.28.53L3 10H1c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h2l3.72-3.72C7.19 1.81 8 2.14 8 2.81zm7.53 3.22l-1.06-1.06-1.97 1.97-1.97-1.97-1.06 1.06L11.44 8 9.47 9.97l1.06 1.06 1.97-1.97 1.97 1.97 1.06-1.06L13.56 8l1.97-1.97z"></path></svg>
+                  Stop ignoring
+                </span>
+              </div>
+            </button>
+          </div>
+        </details-menu>
+      </details>
+        <a class="social-count js-social-count" href="https://github.com/seankross/the-unix-workbench/watchers" aria-label="14 users are watching this repository">
+          14
+        </a>
+</form>
+  </li>
+
+  <li>
+      <div class="js-toggler-container js-social-container starring-container ">
+    <form class="starred js-social-form" action="https://github.com/seankross/the-unix-workbench/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="lFtK+kgxIsqrRGSOXpfv4QV54TFGfQojDiEnZ2csGpKiV7VgW+4aDiWHfB5VtnzDlk+fUw3mYt9kT0PT5SGcLw==">
+      <input type="hidden" name="context" value="repository">
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar seankross/the-unix-workbench" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:70629065,&quot;originating_url&quot;:&quot;https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md&quot;,&quot;user_id&quot;:54865871}}" data-hydro-click-hmac="3a6cc46ed3fe772fffea368053d9810ec8857772f45c0c569982449323b0cb3f" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg aria-label="star" height="16" class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" role="img"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
+
+        Unstar
+</button>        <a class="social-count js-social-count" href="https://github.com/seankross/the-unix-workbench/stargazers" aria-label="622 users starred this repository">
+           622
+        </a>
+</form>
+    <form class="unstarred js-social-form" action="https://github.com/seankross/the-unix-workbench/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="4mRSQKuLOh7Ma6HEmZreed3vgQT4kGVb94runA15uYj21cgMevOzxDM//UjkOKYDLVAAbXyF/AhH9q2d3VcvpA==">
+      <input type="hidden" name="context" value="repository">
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Star seankross/the-unix-workbench" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:70629065,&quot;originating_url&quot;:&quot;https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md&quot;,&quot;user_id&quot;:54865871}}" data-hydro-click-hmac="748cde85f3b1dd9807c021f9b1771eb767ec2f4c126a8a928776641924bec4e1" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg aria-label="star" height="16" class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" role="img"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
+
+        Star
+</button>        <a class="social-count js-social-count" href="https://github.com/seankross/the-unix-workbench/stargazers" aria-label="622 users starred this repository">
+          622
+        </a>
+</form>  </div>
+
+  </li>
+
+  <li>
+          <!-- '"` --><!-- </textarea></xmp> --><form class="btn-with-count" action="https://github.com/seankross/the-unix-workbench/fork" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="VqXfgb/737NneSc00hS3qoxIPCRZ1NE8DKY/1zz/lKdrqjLqcbtzABPQddGP8iSro8MSSWGjQl/bJOTqJg95XA==">
+            <button class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:70629065,&quot;originating_url&quot;:&quot;https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md&quot;,&quot;user_id&quot;:54865871}}" data-hydro-click-hmac="c78b0648c4a79a6409fa6e4e8c1459948440c545cef253c946533a17abe49dd0" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork" type="submit" title="Fork your own copy of seankross/the-unix-workbench to your account" aria-label="Fork your own copy of seankross/the-unix-workbench to your account">              <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 00-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 002 1a1.993 1.993 0 00-1 3.72V6.5l3 3v1.78A1.993 1.993 0 005 15a1.993 1.993 0 001-3.72V9.5l3-3V4.72A1.993 1.993 0 008 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+              Fork
+</button></form>
+    <a href="https://github.com/seankross/the-unix-workbench/network/members" class="social-count" aria-label="1172 users forked this repository">
+      1.2k
+    </a>
+  </li>
+</ul>
+
+    </div>
+      
+<nav class="hx_reponav reponav js-repo-nav js-sidenav-container-pjax clearfix container-lg p-responsive d-none d-lg-block" itemscope="" itemtype="http://schema.org/BreadcrumbList" aria-label="Repository" data-pjax="#js-repo-pjax-container">
+
+  <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a class="js-selected-navigation-item selected reponav-item" itemprop="url" data-hotkey="g c" aria-current="page" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /seankross/the-unix-workbench" href="https://github.com/seankross/the-unix-workbench">
+      <div class="d-inline"><svg class="octicon octicon-code" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"></path></svg></div>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+    <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a itemprop="url" data-hotkey="g i" class="js-selected-navigation-item reponav-item" data-selected-links="repo_issues repo_labels repo_milestones /seankross/the-unix-workbench/issues" href="https://github.com/seankross/the-unix-workbench/issues">
+        <div class="d-inline"><svg class="octicon octicon-issue-opened" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 011.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></div>
+        <span itemprop="name">Issues</span>
+        <span class="Counter">6</span>
+        <meta itemprop="position" content="2">
+</a>    </span>
+
+
+  <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a data-hotkey="g p" data-skip-pjax="true" itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_pulls checks /seankross/the-unix-workbench/pulls" href="https://github.com/seankross/the-unix-workbench/pulls">
+      <div class="d-inline"><svg class="octicon octicon-git-pull-request" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0010 15a1.993 1.993 0 001-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 00-1 3.72v6.56A1.993 1.993 0 002 15a1.993 1.993 0 001-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg></div>
+      <span itemprop="name">Pull requests</span>
+      <span class="Counter">14</span>
+      <meta itemprop="position" content="4">
+</a>  </span>
+
+    <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement" class="position-relative float-left">
+      <a data-hotkey="g w" data-skip-pjax="true" class="js-selected-navigation-item reponav-item" data-selected-links="repo_actions /seankross/the-unix-workbench/actions" href="https://github.com/seankross/the-unix-workbench/actions">
+        <div class="d-inline"><svg class="octicon octicon-play" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 8A7 7 0 110 8a7 7 0 0114 0zm-8.223 3.482l4.599-3.066a.5.5 0 000-.832L5.777 4.518A.5.5 0 005 4.934v6.132a.5.5 0 00.777.416z"></path></svg></div>
+        Actions
+</a>
+    </span>
+
+    <a data-hotkey="g b" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /seankross/the-unix-workbench/projects" href="https://github.com/seankross/the-unix-workbench/projects">
+      <div class="d-inline"><svg class="octicon octicon-project" viewBox="0 0 15 16" version="1.1" width="15" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 00-1 1v14a1 1 0 001 1h13a1 1 0 001-1V1a1 1 0 00-1-1z"></path></svg></div>
+      Projects
+      <span class="Counter">1</span>
+</a>
+
+    <a class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /seankross/the-unix-workbench/wiki" href="https://github.com/seankross/the-unix-workbench/wiki">
+      <div class="d-inline"><svg class="octicon octicon-book" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"></path></svg></div>
+      Wiki
+</a>
+    <a data-skip-pjax="true" class="js-selected-navigation-item reponav-item" data-selected-links="security alerts policy token_scanning code_scanning /seankross/the-unix-workbench/security/advisories" href="https://github.com/seankross/the-unix-workbench/security/advisories">
+      <div class="d-inline"><svg class="octicon octicon-shield" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2l7-2 7 2v6.02C14 12.69 8.69 16 7 16c-1.69 0-7-3.31-7-7.98V2zm1 .75L7 1l6 1.75v5.268C13 12.104 8.449 15 7 15c-1.449 0-6-2.896-6-6.982V2.75zm1 .75L7 2v12c-1.207 0-5-2.482-5-5.985V3.5z"></path></svg></div>
+      Security
+</a>
+    <a class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors dependency_graph pulse people /seankross/the-unix-workbench/pulse" href="https://github.com/seankross/the-unix-workbench/pulse">
+      <div class="d-inline"><svg class="octicon octicon-graph" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"></path></svg></div>
+      Insights
+</a>
+
+</nav>
+
+  <div class="reponav-wrapper reponav-small d-lg-none">
+  <nav class="reponav js-reponav text-center no-wrap" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+
+    <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a class="js-selected-navigation-item selected reponav-item" itemprop="url" aria-current="page" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /seankross/the-unix-workbench" href="https://github.com/seankross/the-unix-workbench">
+        <span itemprop="name">Code</span>
+        <meta itemprop="position" content="1">
+</a>    </span>
+
+      <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_issues repo_labels repo_milestones /seankross/the-unix-workbench/issues" href="https://github.com/seankross/the-unix-workbench/issues">
+          <span itemprop="name">Issues</span>
+          <span class="Counter">6</span>
+          <meta itemprop="position" content="2">
+</a>      </span>
+
+
+    <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_pulls checks /seankross/the-unix-workbench/pulls" href="https://github.com/seankross/the-unix-workbench/pulls">
+        <span itemprop="name">Pull requests</span>
+        <span class="Counter">14</span>
+        <meta itemprop="position" content="4">
+</a>    </span>
+
+      <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /seankross/the-unix-workbench/projects" href="https://github.com/seankross/the-unix-workbench/projects">
+          <span itemprop="name">Projects</span>
+          <span class="Counter">1</span>
+          <meta itemprop="position" content="5">
+</a>      </span>
+
+      <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_actions /seankross/the-unix-workbench/actions" href="https://github.com/seankross/the-unix-workbench/actions">
+          <span itemprop="name">Actions</span>
+          <meta itemprop="position" content="6">
+</a>      </span>
+
+      <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_wiki /seankross/the-unix-workbench/wiki" href="https://github.com/seankross/the-unix-workbench/wiki">
+          <span itemprop="name">Wiki</span>
+          <meta itemprop="position" content="7">
+</a>      </span>
+
+      <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="security alerts policy token_scanning code_scanning /seankross/the-unix-workbench/security/advisories" href="https://github.com/seankross/the-unix-workbench/security/advisories">
+        <span itemprop="name">Security</span>
+        <meta itemprop="position" content="8">
+</a>
+      <a class="js-selected-navigation-item reponav-item" data-selected-links="pulse /seankross/the-unix-workbench/pulse" href="https://github.com/seankross/the-unix-workbench/pulse">
+        Pulse
+</a>
+      <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="community /seankross/the-unix-workbench/community" href="https://github.com/seankross/the-unix-workbench/community">
+          Community
+</a>      </span>
+
+  </nav>
+</div>
+
+
+  </div>
+<div class="container-lg clearfix new-discussion-timeline experiment-repo-nav  p-responsive">
+  <div class="repository-content ">
+
+    
+    
+
+
+  
+
+
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="https://github.com/seankross/the-unix-workbench/blob/feb4f5569054f0894231d224376ef8399a8a6bb1/docs/06-Git-and-GitHub.md">Permalink</a>
+
+    <!-- blob contrib key: blob_contributors:v21:80b4a4991b4c3af17f3a75c54ba2eb7c -->
+      
+
+    <div class="d-flex flex-items-start flex-shrink-0 pb-3 flex-column flex-md-row">
+      <span class="d-flex flex-justify-between width-full width-md-auto">
+        
+<details class="details-reset details-overlay branch-select-menu " id="branch-select-menu">
+  <summary class="btn btn-sm css-truncate" data-hotkey="w" title="Switch branches or tags" aria-haspopup="menu" role="button">
+    <i>Branch:</i>
+    <span class="css-truncate-target" data-menu-button="">master</span>
+    <span class="dropdown-caret"></span>
+  </summary>
+
+  <details-menu class="SelectMenu SelectMenu--hasFilter" src="/seankross/the-unix-workbench/refs/master/docs/06-Git-and-GitHub.md?source_action=show&amp;source_controller=blob" preload="" role="menu">
+    <div class="SelectMenu-modal">
+      <include-fragment class="SelectMenu-loading" aria-label="Menu is loading">
+        <svg class="octicon octicon-octoface anim-pulse" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"></path></svg>
+      </include-fragment>
+    </div>
+  </details-menu>
+</details>
+
+        <div class="BtnGroup flex-shrink-0 d-md-none">
+          <a href="https://github.com/seankross/the-unix-workbench/find/master" class="js-pjax-capture-input btn btn-sm BtnGroup-item" data-pjax="" data-hotkey="t">
+            Find file
+          </a>
+          <clipboard-copy value="docs/06-Git-and-GitHub.md" class="btn btn-sm BtnGroup-item" tabindex="0" role="button">
+            Copy path
+          </clipboard-copy>
+        </div>
+      </span>
+      <h2 id="blob-path" class="breadcrumb flex-auto min-width-0 text-normal flex-md-self-center ml-md-2 mr-md-3 my-2 my-md-0">
+        <span class="js-repo-root text-bold"><span class="js-path-segment"><a data-pjax="true" href="https://github.com/seankross/the-unix-workbench"><span>the-unix-workbench</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="https://github.com/seankross/the-unix-workbench/tree/master/docs"><span>docs</span></a></span><span class="separator">/</span><strong class="final-path">06-Git-and-GitHub.md</strong>
+      </h2>
+
+      <div class="BtnGroup flex-shrink-0 d-none d-md-inline-block">
+        <a href="https://github.com/seankross/the-unix-workbench/find/master" class="js-pjax-capture-input btn btn-sm BtnGroup-item" data-pjax="" data-hotkey="t">
+          Find file
+        </a>
+        <clipboard-copy value="docs/06-Git-and-GitHub.md" class="btn btn-sm BtnGroup-item" tabindex="0" role="button">
+          Copy path
+        </clipboard-copy>
+      </div>
+    </div>
+
+    
+
+
+
+    
+  <div class="Box Box--condensed d-flex flex-column flex-shrink-0">
+      <div class="Box-body d-flex flex-justify-between bg-blue-light flex-column flex-md-row flex-items-start flex-md-items-center">
+        <span class="pr-md-4 f6">
+          <a rel="author" data-skip-pjax="true" data-hovercard-type="user" data-hovercard-url="/users/seankross/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/seankross"><img class="avatar" src="./intro_git_files/1819813" width="20" height="20" alt="@seankross"></a>
+          <a class="text-bold link-gray-dark lh-default v-align-middle" rel="author" data-hovercard-type="user" data-hovercard-url="/users/seankross/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/seankross">seankross</a>
+            <span class="lh-default v-align-middle">
+              <a data-pjax="true" title="major book updates" class="link-gray" href="https://github.com/seankross/the-unix-workbench/commit/5f1121cb7147ec893f11714d5042d447a6b5981f">major book updates</a>
+            </span>
+        </span>
+        <span class="d-inline-block flex-shrink-0 v-align-bottom f6 mt-2 mt-md-0">
+          <a class="pr-2 text-mono link-gray" href="https://github.com/seankross/the-unix-workbench/commit/5f1121cb7147ec893f11714d5042d447a6b5981f" data-pjax="">5f1121c</a>
+          <relative-time datetime="2019-01-23T00:57:24Z" class="no-wrap" title="2019年1月22日 下午7:57 [EST]">on 22 Jan 2019</relative-time>
+        </span>
+      </div>
+
+    <div class="Box-body d-flex flex-items-center flex-auto f6 border-bottom-0 flex-wrap">
+      <details class="details-reset details-overlay details-overlay-dark lh-default text-gray-dark float-left mr-2" id="blob_contributors_box">
+        <summary class="btn-link" role="button">
+          <span><strong>1</strong> contributor</span>
+        </summary>
+        <details-dialog class="Box Box--overlay d-flex flex-column anim-fade-in fast" aria-label="Users who have contributed to this file" src="/seankross/the-unix-workbench/contributors-list/master/docs/06-Git-and-GitHub.md" preload="" role="dialog" aria-modal="true">
+          <div class="Box-header">
+            <button class="Box-btn-octicon btn-octicon float-right" type="button" aria-label="Close dialog" data-close-dialog="">
+              <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+            </button>
+            <h3 class="Box-title">
+              Users who have contributed to this file
+            </h3>
+          </div>
+          <include-fragment class="octocat-spinner my-3" aria-label="Loading..."></include-fragment>
+        </details-dialog>
+      </details>
+    </div>
+  </div>
+
+
+
+
+
+    <div class="Box mt-3 position-relative">
+      
+<div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
+  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+
+      1740 lines (1325 sloc)
+      <span class="file-info-divider"></span>
+    50.7 KB
+  </div>
+
+  <div class="d-flex py-1 py-md-0 flex-auto flex-order-1 flex-md-order-2 flex-sm-grow-0 flex-justify-between">
+
+    <div class="BtnGroup">
+      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="https://github.com/seankross/the-unix-workbench/raw/master/docs/06-Git-and-GitHub.md">Raw</a>
+        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="https://github.com/seankross/the-unix-workbench/blame/master/docs/06-Git-and-GitHub.md">Blame</a>
+      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="https://github.com/seankross/the-unix-workbench/commits/master/docs/06-Git-and-GitHub.md">History</a>
+    </div>
+
+
+    <div>
+            <a class="btn-octicon tooltipped tooltipped-nw hide-sm" href="https://desktop.github.com/" aria-label="Open this file in GitHub Desktop" data-ga-click="Repository, open with desktop, type:windows">
+                <svg class="octicon octicon-device-desktop" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"></path></svg>
+            </a>
+
+          <!-- '"` --><!-- </textarea></xmp> --><form class="inline-form js-update-url-with-hash" action="https://github.com/seankross/the-unix-workbench/edit/master/docs/06-Git-and-GitHub.md" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="VKM81Q+9cxYuFMzZ2KxbpIeq8VvVfwow9Vy7hhfOw0c77qX6RymzXHUyi9Xfg0Jo0ciN+megtuNQONnzIra+6Q==">
+            <button class="btn-octicon tooltipped tooltipped-nw" type="submit" aria-label="Fork this project and edit the file" data-hotkey="e" data-disable-with="">
+              <svg class="octicon octicon-pencil" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 011.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"></path></svg>
+            </button>
+</form>
+          <!-- '"` --><!-- </textarea></xmp> --><form class="inline-form" action="https://github.com/seankross/the-unix-workbench/delete/master/docs/06-Git-and-GitHub.md" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="sUcseO7fy8sRFXyYNQef2pqwJV/22cNN0DIBjY5ULjdCULwfqUV+Bi/X1bLdi6qv+JI/+r4oRO7yGSKzmNj11w==">
+            <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit" aria-label="Fork this project and delete the file" data-disable-with="">
+              <svg class="octicon octicon-trashcan" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"></path></svg>
+            </button>
+</form>    </div>
+  </div>
+</div>
+
+
+
+
+      
+  <div id="readme" class="Box-body readme blob js-code-block-container">
+    <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><h1><a id="user-content-git-and-github" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#git-and-github"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Git and GitHub</h1>
+<blockquote>
+<p>Proof rather than argument. - Japanese proverb</p>
+</blockquote>
+<h2><a id="user-content-what-are-git-and-github" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#what-are-git-and-github"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What are Git and GitHub?</h2>
+<p>Git is a command line program which allows you to track versions of any code or
+plain text documents that you create. Like the "track changes" feature of
+a word processor Git keeps track of who made particular changes, the time and
+date of those changes, and where the changes were made. If a critical file gets
+deleted by accident, or if you make a breaking change to your code and you want
+to try to figure out where the breaking change was made, you can use Git to
+restore the deleted file or find the new bug in your program. Git organizes
+groups of files that you're tracking into a <strong>repository</strong>, which is just a
+directory where all of the changes to files in that directory are tracked. Git
+can also help you collaborate with others when you're writing software. As
+<a href="https://twitter.com/kwbroman" rel="nofollow">Karl Broman</a> says
+(paraphrasing <a href="https://twitter.com/mtholder" rel="nofollow">Mark Holder</a>):
+"Your closest collaborator is you six months ago, but you don’t reply to
+emails."</p>
+<p>GitHub is a website that provides remote Git repositories. A remote repository
+is just a Git repository that you're able to access over an internet connection.
+GitHub allows you to create public remote repositories for free, and anyone can
+see your code in these public repositories. If you want to keep your code private
+then you can pay GitHub for private remote repositories.</p>
+<p>If you're working
+on code together with a friend GitHub can help you sync changes to code files
+between you and your friend. There's also a social and community aspect to
+GitHub, since you can watch other programmers develop their projects. GitHub
+also makes it easy to jump in and help somebody with their project. GitHub
+offers many other useful features which we will discuss at length.</p>
+<h2><a id="user-content-setting-up-git-and-github" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#setting-up-git-and-github"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setting Up Git and GitHub</h2>
+<p>Before setting up Git, go to <a href="https://github.com/">GitHub</a> and create a free
+account. Take note of which email address you use and which username you choose.</p>
+<p>To see if you have Git installed open up your terminal and enter the following:</p>
+<div class="highlight highlight-source-shell"><pre>git --version</pre></div>
+<pre><code>## git version 2.14.3 (Apple Git-98)
+</code></pre>
+<p>If you don't get a response back telling you the version of Git that you have
+installed then you need to install Git. You can find instructions for installing
+Git on your operating system
+<a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" rel="nofollow">here</a>.</p>
+<p>Open up your shell once you have git installed and run <code>git --version</code> again to
+make sure that installation succeeded (you may need to restart your shell or
+your computer). After Git is installed we need to set up two environmental
+variables, but we only need to do this once. The first variable we need to set
+up with Git is your GitHub user name, and the second variable is the email
+address that you used to create your GitHub account:</p>
+<div class="highlight highlight-source-shell"><pre>git config --global user.name <span class="pl-s"><span class="pl-pds">"</span>myUserName<span class="pl-pds">"</span></span>
+git config --global user.email myName@email.com</pre></div>
+<h2><a id="user-content-getting-started-with-git" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#getting-started-with-git"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting Started with Git</h2>
+<p>Let's create our first Git repository. First we need to create a directory:</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">cd</span>
+mkdir my-first-repo
+<span class="pl-c1">cd</span> my-first-repo</pre></div>
+<p>"Repo" in this case is just shorthand for "repository." To start tracking files
+with Git in a directory enter <code>git init</code> into the command line:</p>
+<div class="highlight highlight-source-shell"><pre>git init</pre></div>
+<pre><code>## Initialized empty Git repository in /Users/sean/my-first-repo/.git/
+</code></pre>
+<p>You've just created your first repository! Now let's create a file and start
+tracking it.</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>Welcome to My First Repo<span class="pl-pds">"</span></span> <span class="pl-k">&gt;</span> readme.txt</pre></div>
+<p>Now that we've created a file in this Git repository, let's use <code>git status</code> to
+see what's going on in this repository. We'll be using <code>git status</code> continuously
+throughout this chapter in order to get information about the status of this Git
+repository.</p>
+<div class="highlight highlight-source-shell"><pre>git status</pre></div>
+<pre><code>## On branch master
+##
+## Initial commit
+##
+## Untracked files:
+##   (use "git add &lt;file&gt;..." to include in what will be committed)
+##
+## 	readme.txt
+##
+## nothing added to commit but untracked files present (use "git add" to track)
+</code></pre>
+<p>As you can see <code>readme.txt</code> is listed as an untracked file. In order to let Git
+know that you want to track this file we need to use <code>git add</code> with the name of
+the file that we want to track. Let's start tracking <code>readme.txt</code>:</p>
+<div class="highlight highlight-source-shell"><pre>git add readme.txt</pre></div>
+<p>Git now knows to track any changes to <code>readme.txt</code>. Let's see how the status of
+the repository has changed:</p>
+<div class="highlight highlight-source-shell"><pre>git status</pre></div>
+<pre><code>## On branch master
+##
+## Initial commit
+##
+## Changes to be committed:
+##   (use "git rm --cached &lt;file&gt;..." to unstage)
+##
+## 	new file:   readme.txt
+##
+</code></pre>
+<p>Git is now tracking <code>readme.txt</code>, or in Git-specific language <code>readme.txt</code> is
+now <strong>staged</strong>. Between the parentheses in the message above you can see that
+<code>git status</code> is giving us a tip about how to unstage (or un-track) this file,
+which we could do with <code>git rm --cached readme.txt</code>. Let's unstage this file
+just to see what happens:</p>
+<div class="highlight highlight-source-shell"><pre>git rm --cached readme.txt</pre></div>
+<pre><code>## rm 'readme.txt'
+</code></pre>
+<div class="highlight highlight-source-shell"><pre>git status</pre></div>
+<pre><code>## On branch master
+##
+## Initial commit
+##
+## Untracked files:
+##   (use "git add &lt;file&gt;..." to include in what will be committed)
+##
+## 	readme.txt
+##
+</code></pre>
+<p>Our repository is right back to the way it started with <code>readme.txt</code> as an
+unstaged file. Let's start tracking <code>readme.txt</code> again so we can move on to
+cooler Git features.</p>
+<div class="highlight highlight-source-shell"><pre>git add readme.txt</pre></div>
+<p>Now that Git is tracking <code>readme.txt</code> we need to create a milestone to indicate
+the changes that we made to <code>readme.txt</code>. In this case, the changes that we made
+were creating the file in the first place! This milestone is called a <strong>commit</strong>
+in Git. A commit logs the content of all of the currently staged files. Right
+now we only have <code>readme.txt</code> staged so let's commit the creation of this file.
+When making a Git commit, we need to write a commit message which is specified
+after the <code>-m</code> flag. The message should briefly describe what changes you've
+made since the last commit.</p>
+<div class="highlight highlight-source-shell"><pre>git commit -m <span class="pl-s"><span class="pl-pds">"</span>added readme.txt<span class="pl-pds">"</span></span></pre></div>
+<pre><code>## [master (root-commit) 73e53ca] added readme.txt
+##  1 file changed, 1 insertion(+)
+##  create mode 100644 readme.txt
+</code></pre>
+<p>The message above confirms that the commit succeeded and it summarizes the
+changes that took place since the last commit. As you can see in the message we
+only changed one file, and we only changed one line in that file. Let's run
+<code>git status</code> again to see the state of our repository after we've made the first
+commit:</p>
+<div class="highlight highlight-source-shell"><pre>git status</pre></div>
+<pre><code>## On branch master
+## nothing to commit, working tree clean
+</code></pre>
+<p>All of the changes to the files in this repository have been committed! Let's
+add a few more files to this repository and commit them.</p>
+<div class="highlight highlight-source-shell"><pre>touch file1.txt
+touch fil2.txt
+ls</pre></div>
+<pre><code>## file1.txt
+## fil2.txt
+## readme.txt
+</code></pre>
+<p>While we're at it let's also add a new line of text to <code>readme.txt</code>:</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>Learning Git is going well so far.<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&gt;</span> readme.txt</pre></div>
+<p>Now that we've added two more files and we've made changes to one file let's
+take a look at the state of this repository.</p>
+<div class="highlight highlight-source-shell"><pre>git status</pre></div>
+<pre><code>## On branch master
+## Changes not staged for commit:
+##   (use "git add &lt;file&gt;..." to update what will be committed)
+##   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+##
+## 	modified:   readme.txt
+##
+## Untracked files:
+##   (use "git add &lt;file&gt;..." to include in what will be committed)
+##
+## 	fil2.txt
+## 	file1.txt
+##
+## no changes added to commit (use "git add" and/or "git commit -a")
+</code></pre>
+<p>We can see that Git has detected that one file has been modified, and that there
+are two files in this directory that it is not tracking. Now we need to tell
+Git to track the changes to these files. We could tell Git to track changes to
+each file using <code>git add</code>, or since all of the files in this repository are
+<code>.txt</code> files we could use a wildcard and enter <code>git add *.txt</code> into the
+console. However if we want to track all of the changes to all of the files in
+our directory we should use the command <code>git add -A</code>.</p>
+<div class="highlight highlight-source-shell"><pre>git add -A
+git status</pre></div>
+<pre><code>## On branch master
+## Changes to be committed:
+##   (use "git reset HEAD &lt;file&gt;..." to unstage)
+##
+## 	new file:   fil2.txt
+## 	new file:   file1.txt
+## 	modified:   readme.txt
+##
+</code></pre>
+<p>Now the changes to all of the files in this repository are being tracked.
+Finally let's commit these changes:</p>
+<div class="highlight highlight-source-shell"><pre>git commit -m <span class="pl-s"><span class="pl-pds">"</span>added two files<span class="pl-pds">"</span></span></pre></div>
+<pre><code>## [master 53a1983] added two files
+##  3 files changed, 1 insertion(+)
+##  create mode 100644 fil2.txt
+##  create mode 100644 file1.txt
+</code></pre>
+<p>Darn it, now looking at this commit summary I realize that I have a typo in one
+of the names of my files! Thankfully we can undo the most recent commit with
+the command <code>git reset --soft HEAD~</code>:</p>
+<div class="highlight highlight-source-shell"><pre>git reset --soft HEAD~
+git status</pre></div>
+<pre><code>## On branch master
+## Changes to be committed:
+##   (use "git reset HEAD &lt;file&gt;..." to unstage)
+##
+## 	new file:   fil2.txt
+## 	new file:   file1.txt
+## 	modified:   readme.txt
+##
+</code></pre>
+<p>This repo is now in that exact same state it was right before we made the
+commit. Now we can rename <code>fil2.txt</code> to <code>file2.txt</code>, then let's look at the
+status of the repository again.</p>
+<div class="highlight highlight-source-shell"><pre>mv fil2.txt file2.txt
+git status</pre></div>
+<pre><code>## On branch master
+## Changes to be committed:
+##   (use "git reset HEAD &lt;file&gt;..." to unstage)
+##
+## 	new file:   fil2.txt
+## 	new file:   file1.txt
+## 	modified:   readme.txt
+##
+## Changes not staged for commit:
+##   (use "git add/rm &lt;file&gt;..." to update what will be committed)
+##   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+##
+## 	deleted:    fil2.txt
+##
+## Untracked files:
+##   (use "git add &lt;file&gt;..." to include in what will be committed)
+##
+## 	file2.txt
+##
+</code></pre>
+<p>We previously told Git to track <code>fil2.txt</code>, and we can see that Git acknowledges
+that the file has been deleted. We can bring Git up to speed with what files it
+should be tracking with <code>git add -A</code>:</p>
+<div class="highlight highlight-source-shell"><pre>git add -A
+git status</pre></div>
+<pre><code>## On branch master
+## Changes to be committed:
+##   (use "git reset HEAD &lt;file&gt;..." to unstage)
+##
+## 	new file:   file1.txt
+## 	new file:   file2.txt
+## 	modified:   readme.txt
+##
+</code></pre>
+<p>Finally we got the file names right! Now let's make the correct commit:</p>
+<div class="highlight highlight-source-shell"><pre>git commit -m <span class="pl-s"><span class="pl-pds">"</span>added two files<span class="pl-pds">"</span></span></pre></div>
+<pre><code>## [master 12bb9f5] added two files
+##  3 files changed, 1 insertion(+)
+##  create mode 100644 file1.txt
+##  create mode 100644 file2.txt
+</code></pre>
+<p>That looks much better.</p>
+<h3><a id="user-content-summary" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#summary"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Summary</h3>
+<ul>
+<li>Git tracks changes to plain text files (code files and text documents).</li>
+<li>A directory where changes to files are tracked by Git is called a Git
+repository.</li>
+<li>Change your working directory, then run <code>git init</code> to start a repository.</li>
+<li>You can track changes to a file using <code>git add [names of files]</code>.</li>
+<li>You can create a milestone about the state of your files using <code>git commit -m "message about changes since the last commit"</code>.</li>
+<li>To examine the state of files in your repository use <code>git status</code>.</li>
+</ul>
+<h3><a id="user-content-exercises" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#exercises"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exercises</h3>
+<ol>
+<li>Start a repository in a new directory.</li>
+<li>Create a new file in your new Git repository. Make sure Git is tracking the
+file and then create a new commit.</li>
+<li>Make changes to the file, and then commit these changes.</li>
+<li>Add two new files to your repository, but only commit one of them. What is
+the status of your repository after the commit?</li>
+<li>Undo the last commit, add the untracked file, and redo the commit.</li>
+</ol>
+<h2><a id="user-content-important-git-features" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#important-git-features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Important Git Features</h2>
+<h3><a id="user-content-getting-help-logs-and-diffs" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#getting-help-logs-and-diffs"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting Help, Logs, and Diffs</h3>
+<p>Git commands have their own <code>man</code> pages. You can access them with
+<code>git help [name of command]</code>. For example here's the start of the help page
+for <code>git status</code>:</p>
+<div class="highlight highlight-source-shell"><pre>git <span class="pl-c1">help</span> status</pre></div>
+<pre><code>GIT-STATUS(1)                                Git Manual                               GIT-STATUS(1)
+
+NAME
+       git-status - Show the working tree status
+
+SYNOPSIS
+       git status [&lt;options&gt;...] [--] [&lt;pathspec&gt;...]
+
+DESCRIPTION
+       Displays paths that have differences between the index file and the current HEAD commit,
+       paths that have differences between the working tree and the index file, and paths in the
+       working tree that are not tracked by Git (and are not ignored by gitignore(5)). The first
+       are what you would commit by running git commit; the second and third are what you could
+       commit by running git add before running git commit.
+</code></pre>
+<p>Just like any other help page that uses <code>less</code>, you can return to the prompt
+with the <code>Q</code> key.</p>
+<p>If you want to see a list of your Git commits, enter <code>git log</code> into the console:</p>
+<div class="highlight highlight-source-shell"><pre>git log</pre></div>
+<pre><code>## commit 12bb9f53b10c9b720dac8441e8624370e4e071b6
+## Author: seankross &lt;sean@seankross.com&gt;
+## Date:   Fri Apr 21 15:23:59 2017 -0400
+##
+##     added two files
+##
+## commit 73e53cae75301ce9b2802107b1956447241bb17a
+## Author: seankross &lt;sean@seankross.com&gt;
+## Date:   Thu Apr 20 14:15:26 2017 -0400
+##
+##     added readme.txt
+</code></pre>
+<p>If you've made many commits to a repository you might need to press the <code>Q</code> key
+in order to get back to the prompt. Each commit has its time, date, and commit
+message recorded, along with a SHA-1 hash that uniquely identifies the commit.</p>
+<p>Git can also help show the differences between unstaged changes to your files
+compared to the last commit. Let's add a new line of text to <code>readme.txt</code>:</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>The third line.<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&gt;</span> readme.txt
+git diff readme.txt</pre></div>
+<pre><code>## diff --git a/readme.txt b/readme.txt
+## index b965f6a..a3db358 100644
+## --- a/readme.txt
+## +++ b/readme.txt
+## @@ -1,2 +1,3 @@
+##  Welcome to My First Repo
+##  Learning Git is going well so far.
+## +I added a line.
+</code></pre>
+<p>As you can see a plus sign shows up next to the added line. Now let's open up
+this file in a text editor so we can delete the second line.</p>
+<div class="highlight highlight-source-shell"><pre>nano readme.txt
+<span class="pl-c"><span class="pl-c">#</span> Delete the second line</span>
+git diff readme.txt</pre></div>
+<pre><code>## diff --git a/readme.txt b/readme.txt
+## index b965f6a..e173fdf 100644
+## --- a/readme.txt
+## +++ b/readme.txt
+## @@ -1,2 +1,2 @@
+##  Welcome to My First Repo
+## -Learning Git is going well so far.
+## +I added a line.
+</code></pre>
+<p>A minus sign appears next to the line we deleted. Let's take a look at the
+status of our directory at this point.</p>
+<div class="highlight highlight-source-shell"><pre>git status</pre></div>
+<pre><code>## On branch master
+## Changes not staged for commit:
+##   (use "git add &lt;file&gt;..." to update what will be committed)
+##   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+##
+## 	modified:   readme.txt
+##
+## no changes added to commit (use "git add" and/or "git commit -a")
+</code></pre>
+<p>If you read the results from <code>git status</code> carefully you can see that we can take
+this repository in one of two directions at this point. We can either <code>git add</code>
+the files we've made changes to in order to track those changes, or we can
+use <code>git checkout</code> in order to remove all of the changes we've made to a file
+to restore its content to what was present in the last commit. Let's remove
+our changes to see how this works.</p>
+<div class="highlight highlight-source-shell"><pre>cat readme.txt</pre></div>
+<pre><code>## Welcome to My First Repo
+## I added a line.
+</code></pre>
+<div class="highlight highlight-source-shell"><pre>git checkout readme.txt
+cat readme.txt</pre></div>
+<pre><code>## Welcome to My First Repo
+## Learning Git is going well so far.
+</code></pre>
+<p>And as you can see the changes we made to <code>readme.txt</code> have been undone.</p>
+<h3><a id="user-content-ignoring-files" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#ignoring-files"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ignoring Files</h3>
+<p>Sometimes you might have files that you never want Git to track, for example
+binary files that are generated as by-products of running code (PDFs or images),
+or secrets like passwords or API keys. A file in your Git repository called
+<code>.gitignore</code> can list names of files and sub-folders, or simple regular
+expressions (whatever you can use with <code>ls</code>) in order to specify files which
+should never be tracked. Each line of a <code>.gitignore</code> file should specify a file
+or group of files that should not be tracked by Git. Let's make a <code>.gitignore</code>
+file to make sure that we never track image files in this repository:</p>
+<div class="highlight highlight-source-shell"><pre>touch toby.jpg
+git status</pre></div>
+<pre><code>## On branch master
+## Untracked files:
+##   (use "git add &lt;file&gt;..." to include in what will be committed)
+##
+## 	toby.jpg
+##
+## nothing added to commit but untracked files present (use "git add" to track)
+</code></pre>
+<p>Now that we've added an image to our repository, let's add a <code>.gitignore</code> file
+to make sure Git doesn't track these kinds of files.</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>*.jpg<span class="pl-pds">"</span></span> <span class="pl-k">&gt;</span> .gitignore
+git status</pre></div>
+<pre><code>## On branch master
+## Untracked files:
+##   (use "git add &lt;file&gt;..." to include in what will be committed)
+##
+## 	.gitignore
+##
+## nothing added to commit but untracked files present (use "git add" to track)
+</code></pre>
+<p>Now we can see that Git has detected the new <code>.gitignore</code> file, but it doesn't
+see <code>toby.jpg</code>. Let's add and commit our <code>.gitignore</code> file:</p>
+<div class="highlight highlight-source-shell"><pre>git add -A
+git commit -m <span class="pl-s"><span class="pl-pds">"</span>added gitignore<span class="pl-pds">"</span></span></pre></div>
+<pre><code>## [master adef548] added gitignore
+##  1 file changed, 1 insertion(+)
+##  create mode 100644 .gitignore
+</code></pre>
+<p>Now if we add another <code>.jpg</code> file, Git will not see the file:</p>
+<div class="highlight highlight-source-shell"><pre>touch bernie.jpg
+git status</pre></div>
+<pre><code>## On branch master
+## nothing to commit, working tree clean
+</code></pre>
+<div class="highlight highlight-source-shell"><pre>ls</pre></div>
+<pre><code>## bernie.jpg
+## toby.jpg
+## file1.txt
+## file2.txt
+## readme.txt
+</code></pre>
+<h3><a id="user-content-summary-1" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#summary-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Summary</h3>
+<ul>
+<li><code>git help</code> allows you to read the <code>man</code> pages for specific Git commands.</li>
+<li><code>git log</code> will show you your commit history.</li>
+<li><code>git diff</code> displays what has changed between the last commit and your current
+untracked changes.</li>
+<li>You can specify a <code>.gitignore</code> file in order to tell Git not to track certain
+files.</li>
+</ul>
+<h3><a id="user-content-exercises-1" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#exercises-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exercises</h3>
+<ol>
+<li>Look at the help pages for <code>git log</code> and <code>git diff</code>.</li>
+<li>Add to the <code>.gitignore</code> you already started to include a specific file name,
+then add that file to your repository.</li>
+<li>Create a file that contains the Git log for this repository. Use <code>grep</code> to
+see which day of the week most of the commits occurred on.</li>
+</ol>
+<h2><a id="user-content-branching" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#branching"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Branching</h2>
+<p>Branching is one of the most powerful features that Git offers. Creating
+different Git branches allows you to work on a particular feature or set of
+files independently from other "copies" of a repository. That way you and a
+friend can work on different parts of the same file on different branches, and
+then Git can help you elegantly merge your branches and changes together.</p>
+<p>You can list all of the available branches with the command <code>git branch</code>:</p>
+<div class="highlight highlight-source-shell"><pre>git branch</pre></div>
+<pre><code>## * master
+</code></pre>
+<p>The star (<code>*</code>) indicates which branch you're currently on. The default branch
+that is created is always called <em>master</em>. Usually people use this branch as the
+working version of the software that they are writing, while they develop new and
+potentially unstable features on other branches.</p>
+<p>To add a branch we'll also use the <code>git branch</code> command, followed the name of
+the branch we want to create:</p>
+<div class="highlight highlight-source-shell"><pre>git branch my-new-feature</pre></div>
+<p>Now let's enter <code>git branch</code> again to confirm that we've created the branch:</p>
+<div class="highlight highlight-source-shell"><pre>git branch</pre></div>
+<pre><code>## * master
+## my-new-feature
+</code></pre>
+<p>We can make <code>my-new-feature</code> the current branch using <code>git checkout</code> with the
+name of the branch:</p>
+<div class="highlight highlight-source-shell"><pre>git checkout my-new-feature</pre></div>
+<pre><code>## Switched to branch 'my-new-feature'
+</code></pre>
+<div class="highlight highlight-source-shell"><pre>git branch</pre></div>
+<pre><code>##   master
+## * my-new-feature
+</code></pre>
+<p>If we look at <code>git status</code> we can also see that it will tell us which branch
+we're on:</p>
+<div class="highlight highlight-source-shell"><pre>git status</pre></div>
+<pre><code>On branch my-new-feature
+nothing to commit, working tree clean
+</code></pre>
+<p>We can switch back to the <code>master</code> branch using <code>git checkout</code>:</p>
+<div class="highlight highlight-source-shell"><pre>git checkout master</pre></div>
+<pre><code>## Switched to branch 'master'
+</code></pre>
+<div class="highlight highlight-source-shell"><pre>git branch</pre></div>
+<pre><code>## * master
+##   my-new-feature
+</code></pre>
+<p>Now we can delete a branch by using the <code>-d</code> flag with <code>git branch</code> and the name
+of the branch we want to delete:</p>
+<div class="highlight highlight-source-shell"><pre>git branch -d my-new-feature</pre></div>
+<pre><code>## Deleted branch my-new-feature (was adef548).
+</code></pre>
+<div class="highlight highlight-source-shell"><pre>git branch</pre></div>
+<pre><code>## * master
+</code></pre>
+<p>Let's create a new branch for adding a section to the <code>readme.txt</code> in our
+repository. We can create a new branch and switch to that branch at the same
+time using the command <code>git checkout -b</code> and the name of the new branch we want
+to create:</p>
+<div class="highlight highlight-source-shell"><pre>git checkout -b update-readme</pre></div>
+<pre><code>## Switched to a new branch 'update-readme'
+</code></pre>
+<p>Now that we've created and switched to a new branch, let's make some changes to
+a file. As you might be expecting right now we'll add a new line to
+<code>readme.txt</code>:</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>I added this line in the update-readme branch.<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&gt;</span> readme.txt
+cat readme.txt</pre></div>
+<pre><code>## Welcome to My First Repo
+## Learning Git is going well so far.
+## I added this line in the update-readme branch.
+</code></pre>
+<p>Now that we've added a new line let's commit these changes:</p>
+<div class="highlight highlight-source-shell"><pre>git add -A
+git commit -m <span class="pl-s"><span class="pl-pds">"</span>added a third line to readme.txt<span class="pl-pds">"</span></span></pre></div>
+<pre><code>## [update-readme 6e378a9] added a third line to readme.txt
+##  1 file changed, 1 insertion(+)
+</code></pre>
+<p>Now that we've made a commit on the <code>update-readme</code> branch, let's switch back to the
+<code>master</code> branch, and then we'll take a look at <code>readme.txt</code>:</p>
+<div class="highlight highlight-source-shell"><pre>git checkout master</pre></div>
+<pre><code>## Switched to branch 'master'
+</code></pre>
+<p>Now that we're on the <code>master</code> branch let's quickly glance at <code>readme.txt</code>:</p>
+<div class="highlight highlight-source-shell"><pre>cat readme.txt</pre></div>
+<pre><code>## Welcome to My First Repo
+## Learning Git is going well so far.
+</code></pre>
+<p>The third line that we added is gone! Don't fret, the line that we added isn't
+gone forever. We committed the change to this file while we were on the
+<code>update-readme</code> branch, so the updated file is safely in that branch. Let's
+switch back to that branch just to make sure:</p>
+<div class="highlight highlight-source-shell"><pre>git checkout update-readme
+cat readme.txt</pre></div>
+<pre><code>## Welcome to My First Repo
+## Learning Git is going well so far.
+## I added this line in the update-readme branch.
+</code></pre>
+<p>And the third line is back! Let's add and commit yet another line while we're
+on this branch:</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>It's sunny outside today.<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&gt;</span> readme.txt
+git add -A
+git commit -m <span class="pl-s"><span class="pl-pds">"</span>added weather info<span class="pl-pds">"</span></span></pre></div>
+<pre><code>## [update-readme d7946e9] added weather info
+##  1 file changed, 1 insertion(+)
+</code></pre>
+<p>This is a small example of how to use Git branching, but you can see how you
+can make incremental edits to plain text (usually code files) without
+affecting the <code>master</code> branch (the tested and working copy of your software)
+and without affecting any other branches. You can imagine how
+this system could be used for multiple people to work on the same codebase at
+the same time, or how you could develop and test multiple software features
+without them interfering with each other. Now that we've made a couple of
+changes to <code>readme.txt</code>, let's combine those changes with what we have in the
+<code>master</code> branch. This is made possible by a Git <strong>merge</strong>. Merging allows you
+to elegantly combine the changes that have been made between two branches. Let's
+merge the changes we made in the <code>update-readme</code> branch with the <code>master</code>
+branch. Git incorporates other branches into the current branch by default.
+When you're merging, the current branch is also called the <strong>base</strong> branch.
+Let's switch to the <code>master</code> branch so we can merge in the changes from the
+<code>update-readme</code> branch:</p>
+<div class="highlight highlight-source-shell"><pre>git checkout master</pre></div>
+<pre><code>## Switched to branch 'master'
+</code></pre>
+<p>To merge in the changes from another branch we need to use <code>git merge</code> and the
+name of the branch:</p>
+<div class="highlight highlight-source-shell"><pre>git merge update-readme</pre></div>
+<pre><code>## Updating adef548..d7946e9
+## Fast-forward
+##  readme.txt | 2 ++
+##  1 file changed, 2 insertions(+)
+</code></pre>
+<div class="highlight highlight-source-shell"><pre>cat readme.txt</pre></div>
+<pre><code>## Welcome to My First Repo
+## Learning Git is going well so far.
+## I added this line in the update-readme branch.
+## It's sunny outside today.
+</code></pre>
+<p>It looks like you've merged your first branch in Git! Branching is part of what
+makes Git so powerful since it enables parallel developments on the same code
+base. But what if there are two commits in two separate branches that make
+different edits to the same line of text? When this occurs it is called a
+<strong>conflict</strong>. Let's create a conflict so we can learn how they can be resolved.</p>
+<p>First we'll switch to the <code>update-readme</code> branch. Use <code>nano</code> to edit the last
+line of <code>readme.txt</code>, then commit your changes:</p>
+<div class="highlight highlight-source-shell"><pre>git checkout update-readme
+nano readme.txt
+cat readme.txt</pre></div>
+<pre><code>## Welcome to My First Repo
+## Learning Git is going well so far.
+## I added this line in the update-readme branch.
+## It's cloudy outside today.
+</code></pre>
+<p>Notice that we changed "sunny" to "cloudy" in the last line.</p>
+<div class="highlight highlight-source-shell"><pre>git add -A
+git commit -m <span class="pl-s"><span class="pl-pds">"</span>changed sunny to cloudy<span class="pl-pds">"</span></span></pre></div>
+<p>Now that our changes are committed on the <code>update-readme</code> branch, let's switch
+back to <code>master</code>:</p>
+<div class="highlight highlight-source-shell"><pre>git checkout master</pre></div>
+<p>Let's change the same line of code using <code>nano</code>:</p>
+<div class="highlight highlight-source-shell"><pre>nano readme.txt
+cat readme.txt</pre></div>
+<pre><code>## Welcome to My First Repo
+## Learning Git is going well so far.
+## I added this line in the update-readme branch.
+## It's windy outside today.
+</code></pre>
+<p>Now let's commit these changes:</p>
+<div class="highlight highlight-source-shell"><pre>git add -A
+git commit -m <span class="pl-s"><span class="pl-pds">"</span>changed sunny to windy<span class="pl-pds">"</span></span></pre></div>
+<p>We've now created two commits that directly conflict with each other. On the
+<code>update-readme</code> branch the last line says <code>It's cloudy outside today.</code>, while
+on the <code>master</code> branch the last line says <code>It's windy outside today.</code>. Let's
+see what happens when we try to merge <code>update-readme</code> into <code>master</code>.</p>
+<div class="highlight highlight-source-shell"><pre>git merge update-readme</pre></div>
+<pre><code>## Auto-merging readme.txt
+## CONFLICT (content): Merge conflict in readme.txt
+## Automatic merge failed; fix conflicts and then commit the result.
+</code></pre>
+<p>Uh-oh, there's a conflict! Let's check the status of the repo right now:</p>
+<div class="highlight highlight-source-shell"><pre>git status</pre></div>
+<pre><code>## On branch master
+## You have unmerged paths.
+##   (fix conflicts and run "git commit")
+##   (use "git merge --abort" to abort the merge)
+##
+## Unmerged paths:
+##   (use "git add &lt;file&gt;..." to mark resolution)
+##
+## 	both modified:   readme.txt
+##
+## no changes added to commit (use "git add" and/or "git commit -a")
+</code></pre>
+<p>If you're getting used to reading the result of <code>git status</code>, you can see that
+it often offers suggestions about what steps you should take next. Git is
+indicating that both versions of readme.txt have modified the same text. Let's
+take a look at <code>readme.txt</code> to see what's going on there:</p>
+<div class="highlight highlight-source-shell"><pre>cat readme.txt</pre></div>
+<pre><code>## Welcome to My First Repo
+## Learning Git is going well so far.
+## I added this line in the update-readme branch.
+## &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+## It's windy outside today.
+## =======
+## It's cloudy outside today.
+## &gt;&gt;&gt;&gt;&gt;&gt;&gt; update-readme
+</code></pre>
+<p>The first three lines of this file look normal, then things get interesting!
+The line between <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> and <code>=======</code> shows the version of the
+conflicted line on the current branch. In Git terminology the <code>HEAD</code>
+represents the most recent commit on the branch which is currently checked out
+(which is <code>master</code> in this case). The line between <code>=======</code> and
+<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; update-readme</code> shows the version of the line on the <code>update-readme</code>
+branch. In order to resolve this conflict, all we need to do is open <code>readme.txt</code>
+with <code>nano</code> so we can delete the lines we want to get rid of. In this case let's
+keep the "cloudy" version.</p>
+<div class="highlight highlight-source-shell"><pre>nano readme.txt
+cat readme.txt</pre></div>
+<pre><code>## Welcome to My First Repo
+## Learning Git is going well so far.
+## I added this line in the update-readme branch.
+## It's cloudy outside today.
+</code></pre>
+<p>Now we can commit the resolution of this conflict.</p>
+<div class="highlight highlight-source-shell"><pre>git add -A
+git commit -m <span class="pl-s"><span class="pl-pds">"</span>resolved conflict<span class="pl-pds">"</span></span></pre></div>
+<p>You're now familiar with this basics of Git! If you want to go into further
+depth with your study of Git I highly recommend the free and open source book
+<a href="https://git-scm.com/book/" rel="nofollow">Pro Git</a>.</p>
+<h3><a id="user-content-summary-2" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#summary-2"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Summary</h3>
+<ul>
+<li>Git branching allows you and others to work on the same code base together.</li>
+<li>You can create a branch with the command <code>git branch [name of branch]</code>.</li>
+<li>To switch to a branch use <code>git checkout [name of branch]</code>.</li>
+<li>You can combine a branch with your current branch by using <code>git merge</code>.</li>
+</ul>
+<h3><a id="user-content-exercises-2" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#exercises-2"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exercises</h3>
+<ol>
+<li>Start a new branch.</li>
+<li>Switch to that branch and add commits to it. Switch to an older branch and
+then merge the new branch into your current branch.</li>
+<li>Purposefully create and resolve a merge conflict.</li>
+</ol>
+<h2><a id="user-content-github" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#github"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GitHub</h2>
+<p>Now that you know the basics of using Git, let's talk about how you can share
+your work and start collaborating online using GitHub. As an added bonus, by
+the end of this chapter you will have created your very own website!
+To get started go to <a href="https://github.com/">GitHub</a> and sign in with the
+credentials we set up at the beginning of the chapter. After you sign in you
+should see a plus-sign near the top-right corner of your web browser. Click the
+plus-sign and a little menu should appear, then click "New repository." You
+should now see a screen that looks like this:</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/images/new-repo.png"><img src="./intro_git_files/new-repo.png" alt="" style="max-width:100%;"></a></p>
+<p>In the text box under <strong>Repository name</strong> type <code>my-first-repo</code> and then click
+the green <strong>Create repository</strong> button. Now you should see a page like this:</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/images/quick-setup.png"><img src="./intro_git_files/quick-setup.png" alt="" style="max-width:100%;"></a>
+GitHub offers a few suggestions about what to do with our new remote repository.
+We've already been using a local Git repository, and what GitHub provides is a
+<strong>remote</strong> Git repository. A remote Git repository is just a Git repository
+stored on a computer is that always turned on and connected to the internet, so
+it can act as a central point where we can share and sync our changes to files
+with our friends and colleagues. We can see which remote repositories our local
+repository is connected to with the <code>git remote</code> command while we have our
+working directory set to <code>my-first-repo</code>:</p>
+<div class="highlight highlight-source-shell"><pre>git remote</pre></div>
+<p>Nothing is printed to the console since you haven't set any remotes up yet!
+Now let's add your new GitHub repository as a remote in your local repository:</p>
+<div class="highlight highlight-source-shell"><pre>git remote add origin https://github.com/seankross/my-first-repo.git</pre></div>
+<p>In the command above <code>git remote add</code> adds a new remote to your local repository,
+<code>origin</code> is the name we're assigning to this remote repository, and
+<code>https://github.com/seankross/my-first-repo.git</code>
+is the URL of the remote repository. You should of course substitute <code>seankross</code>
+for your GitHub user name so that it corresponds to your remote repository URL.
+Later I'll explain why "origin" is the name we chose for this remote.
+Let's run <code>git remote</code> again to confirm that we added the <code>origin</code> remote
+successfully:</p>
+<div class="highlight highlight-source-shell"><pre>git remote</pre></div>
+<pre><code>## origin
+</code></pre>
+<p>Now that we've added our GitHub remote, let's perform our first Git <strong>push</strong>. A
+Git push updates a remote repository with all of the commits that we've made to
+our local Git repository. This first Git push you do when setting up a remote
+on GitHub with a local repository is a little different from future Git pushes.
+We'll need to use the <code>-u</code> flag in order to set <code>origin</code> as the default remote
+repository so we don't have to provide its name every time we want to interact
+with it. Enter the following command, modified so that you're using your GitHub
+user name:</p>
+<div class="highlight highlight-source-shell"><pre>git push -u origin master</pre></div>
+<pre><code>## Counting objects: 23, done.
+## Delta compression using up to 4 threads.
+## Compressing objects: 100% (19/19), done.
+## Writing objects: 100% (23/23), 1.88 KiB | 0 bytes/s, done.
+## Total 23 (delta 9), reused 0 (delta 0)
+## remote: Resolving deltas: 100% (9/9), done.
+## To https://github.com/seankross/my-first-repo.git
+##  * [new branch]      master -&gt; master
+## Branch master set up to track remote branch master from origin.
+</code></pre>
+<p>The command above pushed all of our commits to the remote repository on
+GitHub, and it set up the <code>master</code> branch of the <code>origin</code> remote repository as
+the default remote repository. Looking back at the web page for your repository
+on GitHub, it should look something like this:</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/images/first-push.png"><img src="./intro_git_files/first-push.png" alt="" style="max-width:100%;"></a></p>
+<p>One neat feature of GitHub is that readme files are rendered on the repository
+page so you can write documents which explain the contents of your repository.
+Let's get more creative with these readme documents by learning a small
+language called Markdown.</p>
+<h3><a id="user-content-markdown" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#markdown"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Markdown</h3>
+<p>Markdown is a markup language. Markup languages are sets of rules for adding
+decorative features to text. The most popular markup language is HTML, but you
+might have also heard of XML and LaTeX.
+Markdown is a powerful markup language because it's
+small, intuitive, and readable when it's written as plain text. GitHub
+transforms Markdown files (which end in the file extension <code>.md</code>) into simple
+HTML web pages in your repository. If there is a file called <code>README.md</code> in any
+folder in your repository, then that file is rendered to HTML and displayed on
+GitHub. Let's create a <code>README.md</code> file for our repository. First we'll destroy
+the plain text readme file we already have:</p>
+<div class="highlight highlight-source-shell"><pre>rm readme.txt</pre></div>
+<p>I've included a Markdown file below that attempts to explain some of Markdown's
+features. Copy the plain text below, create a new file called <code>README.md</code> with
+<code>nano</code>, paste the text in, and then save the file.</p>
+<pre><code># This is a large heading
+
+## This is a smaller heading
+
+And as **imagination** bodies forth,
+The forms of things *unknown*, the poet’s pen,
+Turns them to shapes and gives to airy nothing,
+A local *habitation* and a **name**.
+
+- This is
+- an unordered
+- list
+
+1. This is
+2. an ordered
+3. list
+
+Here is `some code` in the middle of a sentence.
+
+```
+This is
+a block
+of code
+```
+
+Here is how you make [a link](https://www.wikipedia.org/).
+
+![This is an image.](https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
+</code></pre>
+<div class="highlight highlight-source-shell"><pre>nano README.md</pre></div>
+<p>Now let's add our changes, make a commit, and push those changes to our remote
+repository:</p>
+<div class="highlight highlight-source-shell"><pre>git add -A
+git commit -m <span class="pl-s"><span class="pl-pds">"</span>added README.md<span class="pl-pds">"</span></span>
+git push</pre></div>
+<pre><code>## Counting objects: 3, done.
+## Delta compression using up to 4 threads.
+## Compressing objects: 100% (3/3), done.
+## Writing objects: 100% (3/3), 659 bytes | 0 bytes/s, done.
+## Total 3 (delta 0), reused 0 (delta 0)
+## To https://github.com/seankross/my-first-repo.git
+##    ca04f67..2169912  master -&gt; master
+</code></pre>
+<p>Since we set up a default remote repository the first time we pushed, we can
+now simply enter <code>git push</code> in order to send our latest commits to the <code>master</code>
+branch on the <code>origin</code> remote. Now the page on GitHub for your repository should
+look something like this:</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/images/md-readme.png"><img src="./intro_git_files/md-readme.png" alt="" style="max-width:100%;"></a></p>
+<p>We've got a much more complex readme file! Notice how the plain text that we
+wrote has been rendered according to a few rules:</p>
+<ul>
+<li>Pound signs (<code>#</code>, <code>##</code>) make headings.</li>
+<li>A word surrounded by single asterisks (<code>*word*</code>) makes that word <em>italicized</em>.</li>
+<li>A word surrounded by double asterisks (<code>**word**</code>) makes that word <strong>bold</strong>.</li>
+<li>You can create lists with hyphens (<code>-</code>) or numbers (<code>1.</code>, <code>2.</code>, <code>3.</code>).</li>
+<li>Code can be placed in the middle of a line with single backticks (<code>`code`</code>).</li>
+<li>A code block can be created by putting code in between a set of triple
+backticks (<code>```</code>).</li>
+<li>You can insert a link with brackets and parentheses (<code>[Link text here](http://jhu.edu)</code>).</li>
+<li>You can use an image with an exclamation point, and a link to an image (<code>![Alt text here](http://jhu.edu/jeff.jpg)</code>)</li>
+</ul>
+<p>Personally I really enjoy writing with Markdown, to the point where I wrote
+<a href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md">this entire book</a>
+in Markdown! We're going to be using Markdown for the rest of this chapter, so
+I suggest that you take a few minutes to play around with the syntax in
+<a href="https://jbt.github.io/markdown-editor/#TVFLbtwwDN3rFCxm0xgTOU133WXXA2QXFDDHYizWEmlIctzZ9Rq9Xk9SetqZFNCCIt97/LwDPEeuYA8hYZkIImFgmZw7HP6r1YwpUXmvPkkArNB1nHFiwcYqXQcnDUwVXrW0eHTPkfYwV9BXaNGIxlhlFt2kO1qGYFFqv3/+qrCQGGEtUvd8hqZQIy4mhtZq4jeLLIdcziB6ETu6J0g6YoIu4onb3yEueLTJBDN1nXfu/rqIRSiwipZAhYJ9E9fm3Cd/Qzz6HXIFfPb/EF/tu19iqJoJRg00AMtlg8whJNo3tDORNJKRrOkwDO4qinCyOWdnmJ16qd0ko25w1hUyzgQvZgPL/O1jbG2pX/p+2za/8cwLBUavZervTPzDy80agd0B8u+UiVtcT37U3J85rtz/wGLXQukLJcJKtQ9mQFIM/duDf/CP/Ywl3Wdda8Mxkv++THd/AA==" rel="nofollow">this in-browser Markdown editor</a>.
+For more information about Markdown see GitHub's helpful
+<a href="https://guides.github.com/features/mastering-markdown/"><em>Mastering Markdown</em></a>
+guide.</p>
+<h3><a id="user-content-pull-requests" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#pull-requests"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pull Requests</h3>
+<p>The next two features of GitHub we're going to discuss - <strong>pull requests</strong> and
+<strong>forking</strong> - are what make GitHub so great. A pull request allows you to
+interactively compare two different branches before you merge them so you can
+either go ahead with the merge or provide feedback to whoever opened the pull
+request. Essentially a pull request allows a person to ask another person if
+they're willing to incorporate changes on one branch into another branch. This
+social coding transaction may involve you and a collaborator, you and a
+stranger, or you might open a pull request on your own repository just as a
+method of staying organized.</p>
+<p>Since I can't guarantee that you have a collaborator I'll show you how to open
+a pull request on your own repository. First in your local <code>my-first-repo</code>
+repository let's switch over to the <code>update-readme</code> branch.</p>
+<div class="highlight highlight-source-shell"><pre>git checkout update-readme</pre></div>
+<pre><code>## Switched to branch 'update-readme'
+</code></pre>
+<p>Let's take a look at what's currently on this branch:</p>
+<div class="highlight highlight-source-shell"><pre>ls</pre></div>
+<pre><code>## bernie.jpg
+## toby.jpg
+## file1.txt
+## file2.txt
+## readme.txt
+</code></pre>
+<p>It looks like we haven't updated this branch to be current with the <code>master</code>
+branch. We can easily do this by merging in the <code>master</code> branch.</p>
+<div class="highlight highlight-source-shell"><pre>git merge master</pre></div>
+<pre><code>## Updating 5aa94fa..2169912
+## Fast-forward
+##  README.md  | 28 ++++++++++++++++++++++++++++
+##  readme.txt |  4 ----
+##  2 files changed, 28 insertions(+), 4 deletions(-)
+##  create mode 100644 README.md
+##  delete mode 100644 readme.txt
+</code></pre>
+<p>Now the <code>master</code> and <code>update-readme</code> branches are identical. Let's clean up this
+directory so that you can make a little personalized Markdown project. First
+let's delete all of the files in this directory that we don't really need,
+meaning everything except <code>README.md</code>.</p>
+<div class="highlight highlight-source-shell"><pre>rm <span class="pl-k">*</span>.txt
+rm <span class="pl-k">*</span>.jpg
+ls</pre></div>
+<pre><code>## README.md
+</code></pre>
+<p>Now that we've cleaned up our repository let's open up <code>README.md</code> with <code>nano</code>.
+Delete everything that's written there and write a few lines about yourself.
+In the block of text below you can see what I've written in <code>README.md</code>.</p>
+<pre><code># Sean Kross
+
+### Geography
+
+I live in the city of Baltimore, in the state of Maryland, in the United States
+of America.
+
+### Reading
+
+Three of my favorite books are:
+
+- *Mindstorms* by Seymour Papert
+- *Welcome to the Monkey House* by Kurt Vonnegut
+- *Persepolis* by Marjane Satrapi
+
+### Food
+
+Last night I dreamt about eating in these restaurants:
+
+1. Linger in Denver.
+2. Azura in Jerusalem.
+3. Gemma in New York City.
+
+### Contact
+
+The best way to get in touch with me is [on Twitter](https://twitter.com/seankross).
+</code></pre>
+<p>Once you've written up a few fun things about yourself, add your changes, and
+make a new commit.</p>
+<div class="highlight highlight-source-shell"><pre>git add -A
+git commit -m <span class="pl-s"><span class="pl-pds">"</span>made readme more personal<span class="pl-pds">"</span></span></pre></div>
+<p>Like a local Git repository, remote repositories on GitHub can have multiple
+branches. Let's push this commit to the <code>update-readme</code> branch on GitHub:</p>
+<div class="highlight highlight-source-shell"><pre>git push origin update-readme</pre></div>
+<pre><code>## Counting objects: 3, done.
+## Delta compression using up to 4 threads.
+## Compressing objects: 100% (3/3), done.
+## Writing objects: 100% (3/3), 630 bytes | 0 bytes/s, done.
+## Total 3 (delta 0), reused 0 (delta 0)
+## To https://github.com/seankross/my-first-repo.git
+##  * [new branch]      update-readme -&gt; update-readme
+</code></pre>
+<p>Notice that we needed to specify which remote we were pushing to since GitHub
+didn't previously know about the existence of the <code>update-readme</code> branch.
+When you perform a <code>git push</code>, only the commits on the current branch are sent
+to the remote repository. That way you can create local branches that cannot be
+accessed from the remote repository, unless you explicitly push them to GitHub.</p>
+<p>Now let's go back to the GitHub page for our repository. On the left side of the
+page you should see a button that says "Branch: master." Click on that button
+and a little drop-down menu should appear, as you can see below:</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/images/branch-button.png"><img src="./intro_git_files/branch-button.png" alt="" style="max-width:100%;"></a></p>
+<p>Click "update-readme" in the menu in order to view the files in that branch. You
+should see that the <code>README.md</code> files are different! You can switch back and
+forth between looking at branches using this menu.</p>
+<p>Now that you've pushed an updated branch to GitHub, let's open a pull request.
+A pull request is like a guided <code>git merge</code> that is facilitated by GitHub. To
+start the pull request click the "New pull request" button next to the branch
+button (see the upper left corner of the image above). That button should take
+you to a page like this:</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/images/create-pr.png"><img src="./intro_git_files/create-pr.png" alt="" style="max-width:100%;"></a></p>
+<p>There are a few important details on this page, so let's go through them. First
+under the "Open a pull request" heading you can see the names of two branches.
+The branch name after "base:" shows the branch that changes are being merged
+into (in this case the <code>master</code> branch), and the branch name after "compare:"
+shows the branch that has the changes (in this case the <code>update-readme</code> branch).</p>
+<p>In the text boxes below you can write a title for your pull request (the default
+title in this case is the name of the last commit) and you can write comments
+about the pull request which you can format with Markdown. If you're
+collaborating with somebody else on a project it's important to write good
+comments so that your collaborators know what changes you made in the branch
+you are requesting to merge. If you scroll down
+the page you can see a line-by-line comparison of the changes in the "compare"
+branch compared to the "base" branch. When you've finished going over these
+changes click the green "Create pull request" button in order to open the pull
+request. You should now see a screen like this:</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/images/opened-pr.png"><img src="./intro_git_files/opened-pr.png" alt="" style="max-width:100%;"></a></p>
+<p>Congratulations on opening your first pull request! Let's take a look at what's
+happening on this page. Below the title of the pull request we can see three
+tabs called <strong>Conversation</strong>, <strong>Commits</strong>, and <strong>Files changed</strong>. In the
+<strong>Conversation</strong> tab we can add comments to the pull request which can be
+formatted with Markdown. The <strong>Commits</strong> tab lists the commits that have been
+made to the "compare" branch in this pull request. Finally the <strong>Files changed</strong>
+tab shows the same line-by-line comparison we saw before.</p>
+<p>Usually when you're working with collaborators there's a great deal of
+discussion that occurs after you open a pull request. Git commits that are
+pushed to the "compare" branch (<code>update-readme</code> in the case) of the GitHub
+repository will be reflected in a pull request even after the request has been
+opened. This way changes that are made as a result of the discussion can be
+easily incorporated. Once you're ready go back to the <strong>Conversation</strong> tab and click
+the green "Merge pull request" button, then click the green "Confirm merge"
+button that appears. This will <code>git merge</code> the "compare" branch into the "base"
+branch on our remote repository. You just merged your first pull request! Now
+click near the top left corner of this page on the <strong>&lt;&gt; Code</strong> tab, and you
+should see that the changes from the <code>update-readme</code> branch have been merged
+into <code>master</code>.</p>
+<p>When working on a remote GitHub repository with many other folks these pull
+requests and merges can happen without you being involved at all if the commits
+affect parts of the code that you're not working on. Still it's important to
+keep your local repository up to date with the latest changes in the remote
+repository. Let's go back to your terminal where you have <code>my-first-repo</code> set
+as the current working directory. First let's switch to the <code>master</code> branch.</p>
+<div class="highlight highlight-source-shell"><pre>git checkout master</pre></div>
+<p>Now let's update our local master branch with the commits that have been merged
+into the master branch on our remote repository. We can accomplish this with
+the command <code>git pull</code>:</p>
+<div class="highlight highlight-source-shell"><pre>git pull</pre></div>
+<pre><code>## remote: Counting objects: 1, done.
+## remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+## Unpacking objects: 100% (1/1), done.
+## From https://github.com/seankross/my-first-repo
+##    2169912..b9217f6  master     -&gt; origin/master
+## Updating 2169912..b9217f6
+## Fast-forward
+##  README.md | 38 ++++++++++++++++++--------------------
+##  file1.txt |  0
+##  file2.txt |  0
+##  3 files changed, 18 insertions(+), 20 deletions(-)
+##  delete mode 100644 file1.txt
+##  delete mode 100644 file2.txt
+</code></pre>
+<p>With <code>git pull</code> Git finds the <code>master</code> branch on the <code>origin</code> remote repository
+and updates our local repository with the new commits. You've now completed the
+full pull request life cycle! In the <strong>Forking</strong> section of this chapter we'll
+come back to discussing how GitHub super-charges pull requests in order to
+foster a greater coding community.</p>
+<h3><a id="user-content-pages" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#pages"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pages</h3>
+<p>For now we're going to take a little detour to discuss
+<a href="https://pages.github.com/">GitHub Pages</a>. GitHub Pages allows you to create
+and host a website on GitHub using only Git and Markdown. Go back to your
+<code>my-first-repo</code> repository page on GitHub on click the <em>Settings</em> tab at the
+top. Scroll down the page until you see a box that says <strong>GitHub Pages</strong>. Then
+click on the drop-down menu that says <strong>None</strong>. You should see a screen like
+this:</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/images/select-pages.png"><img src="./intro_git_files/select-pages.png" alt="" style="max-width:100%;"></a></p>
+<p>Click <em>master branch</em> and then click <em>Save</em>. Now go to the website
+[your-github-username].github.io/my-first-repo (in my case the address is
+<a href="http://seankross.github.io/my-first-repo" rel="nofollow">seankross.github.io/my-first-repo</a>)
+and you should see your very own website!</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/images/my-website.png"><img src="./intro_git_files/my-website.png" alt="" style="max-width:100%;"></a></p>
+<p>How cool is that!? If you want to change your new website all you need to do
+is edit your <code>README.md</code> then commit and push the changes! Websites like these
+are great for showing off projects, providing software documentation, creating
+online resumes, or writing a blog! GitHub pages websites can be as simple as a
+few Markdown documents, or if you know some web programming you can turn
+them into complex websites. For more information about GitHub Pages you can
+check out the <a href="https://pages.github.com/">documentation here</a>.</p>
+<h3><a id="user-content-forking" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#forking"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Forking</h3>
+<p>If you're reading this book it's fairly safe to say that you probably interact
+with software every day. Software powers your computer, the internet, your
+phone, and this book. Considering all of the software you use, have you ever
+thought about modifying that software? Perhaps you could write some code to add
+a new feature you think would be useful or to fix a glitch that you've noticed.
+GitHub makes modifying other people's software easy through the process of
+<strong>forking</strong>. Forking a GitHub repository copies somebody else's GitHub
+repository into your GitHub account. You can then modify this copy of their
+software however you like. After you've added some commits to your copy of the
+repository you can keep the new commits to yourself, share them with
+others, or you can open up a <strong>pull request</strong> for your new commits to be merged
+into the original source repository. This original source repository (the
+repository you forked) is often called the <em>upstream</em> repository.</p>
+<p>Let's try forking a repository now. Go to
+<a href="https://github.com/seankross/the-unix-workbench">https://github.com/seankross/the-unix-workbench</a> and click the <strong>Fork</strong> button
+in the upper right corner. GitHub will then ask you what account you want to
+use to fork the repository. If you're a new GitHub user then you only have one
+account, so select that account. After a brief "please wait" screen you should
+then see the forked repository at the URL
+<a href="https://github.com/%5Byour-github-username%5D/the-unix-workbench">https://github.com/[your-github-username]/the-unix-workbench</a>. You've now forked
+the repository for this book! In order to get a local copy of the repository
+you'll need to use the <code>git clone</code> command. Cloning a repository copies a Git
+repository to your computer while keeping track of the remote repository that
+it originated from. Let's clone your fork of my repository now. On the right
+side of the repository page you should see a green button that says <strong>Clone or
+download</strong>. Click that button and the following menu should appear:</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/images/clone-wb.png"><img src="./intro_git_files/clone-wb.png" alt="" style="max-width:100%;"></a></p>
+<p>Click on the little clipboard icon which will copy the Git URL. Now go back to
+the terminal and change your working directory to your home directory.</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">cd</span>
+<span class="pl-c1">pwd</span></pre></div>
+<pre><code>## /Users/sean
+</code></pre>
+<p>Now let's clone the repository. Type <code>git clone</code> into the terminal and then
+paste in the Git URL we copied from GitHub:</p>
+<div class="highlight highlight-source-shell"><pre>git clone https://github.com/[your-github-username]/the-unix-workbench.git</pre></div>
+<pre><code>## Cloning into 'the-unix-workbench'...
+## remote: Counting objects: 669, done.
+## remote: Compressing objects: 100% (7/7), done.
+## remote: Total 669 (delta 2), reused 8 (delta 2), pack-reused 660
+## Receiving objects: 100% (669/669), 4.00 MiB | 4.55 MiB/s, done.
+## Resolving deltas: 100% (510/510), done.
+</code></pre>
+<p>Now <code>cd</code> into your cloned repository.</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">cd</span> the-unix-workbench</pre></div>
+<p>You've just successfully completed your first Git clone! Like we mentioned
+before, cloning has the advantage of keeping track of the remote repository that
+should be associated with the local repository. Let's test this by entering
+<code>git remote</code> with the added <code>-v</code> flag:</p>
+<div class="highlight highlight-source-shell"><pre>git remote -v</pre></div>
+<pre><code>## origin	https://github.com/[your-github-username]/the-unix-workbench.git (fetch)
+## origin	https://github.com/[your-github-username]/the-unix-workbench.git (push)
+</code></pre>
+<p>As you can see the default name of the remote repository after you clone that
+repository is <code>origin</code>. Now that you've cloned your fork you should add a
+commit! One change that I suggest is adding your name to <code>guestbook.md</code>. Let's
+do this now:</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>- Sean Kross<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&gt;</span> guestbook.md <span class="pl-c"><span class="pl-c">#</span> Add your own name of course!</span>
+cat guestbook.md</pre></div>
+<pre><code>## # Guest Book
+##
+## - Sean Kross
+</code></pre>
+<p>Now add, commit, and push your changes:</p>
+<div class="highlight highlight-source-shell"><pre>git add guestbook.md
+git commit -m <span class="pl-s"><span class="pl-pds">"</span>added my name to guestbook.md<span class="pl-pds">"</span></span>
+git push</pre></div>
+<p>Now that you've added your name to the guest book you can merge your change into
+my version of the guest book by opening up a new pull request as described in
+the previous section. If your pull request to the guest book is merged into the
+upstream repository (by me) then you will have completed the full GitHub
+lifecycle!</p>
+<p>The process of forking a repository, making changes, and then opening a pull
+request is a very powerful workflow for seeing changes that you want made in
+the software world. Many large and important software projects have repositories
+on GitHub including <a href="https://github.com/torvalds/linux">operating systems</a>,
+<a href="https://github.com/golang/go">programming languages</a>,
+and even <a href="https://github.com/git/git">Git itself</a>! If there's a change you want
+to see in a public GitHub repository, fork that repository and make the change!</p>
+<h3><a id="user-content-summary-3" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#summary-3"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Summary</h3>
+<ul>
+<li>You can use GitHub to create and host remote Git repositories.</li>
+<li>A remote Git repository is a Git repository that is always connected to the
+internet.</li>
+<li>List remote repositories with <code>git remote</code>.</li>
+<li>Add remote repositories with <code>git remote add [name-of-remote] https://github.com/[username]/[repo-name].git</code></li>
+<li>Add commits to your remote repository with <code>git push [name-of-remote] [name-of-branch]</code>
+or just <code>git push</code> if you've set up a default remote and branch.</li>
+<li>To merge commits on a remote repository into your local repository use
+<code>git pull [name-of-remote] [name-of-branch]</code> or just <code>git pull</code> if you've set
+up a default remote and branch.</li>
+<li>A pull request allows you to interactively compare two different branches
+before you merge them.</li>
+<li>GitHub Pages allows you to host websites written in Markdown for free!</li>
+<li>Forking a repository allows you to make changes to a copy of a public
+repository. You can then open a pull request if you think your changes should
+be merged into the upstream repository!</li>
+</ul>
+<h3><a id="user-content-exercises-3" class="anchor" aria-hidden="true" href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md#exercises-3"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exercises</h3>
+<ol>
+<li>Create a new repository on GitHub. Clone your repository and add a
+<code>README.md</code> file. Push this file to GitHub and create a GitHub Pages website
+for this repository.</li>
+<li>Fork an existing repository (try one of mine: <a href="https://github.com/seankross">https://github.com/seankross</a>)
+and try to identify something valuable you could contribute. Make changes or
+additions to that repository, then open a pull request.</li>
+<li>Read through <a href="https://guides.github.com/">GitHub's Guides</a>.</li>
+</ol>
+</article>
+  </div>
+
+    </div>
+
+  
+
+  <details class="details-reset details-overlay details-overlay-dark">
+    <summary data-hotkey="l" aria-label="Jump to line" role="button"></summary>
+    <details-dialog class="Box Box--overlay d-flex flex-column anim-fade-in fast linejump" aria-label="Jump to line" role="dialog" aria-modal="true">
+      <!-- '"` --><!-- </textarea></xmp> --><form class="js-jump-to-line-form Box-body d-flex" action="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+        <input class="form-control flex-auto mr-3 linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line…" aria-label="Jump to line" autofocus="">
+        <button type="submit" class="btn" data-close-dialog="">Go</button>
+</form>    </details-dialog>
+  </details>
+
+
+
+  </div>
+</div>
+
+    </main>
+  </div>
+  
+
+  </div>
+
+        
+<div class="footer container-lg width-full p-responsive" role="contentinfo">
+  <div class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <ul class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      <li class="mr-3 mr-lg-0">© 2020 GitHub, Inc.</li>
+        <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
+        <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
+        <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to security, text:security" href="https://github.com/security">Security</a></li>
+        <li class="mr-3 mr-lg-0"><a href="https://githubstatus.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a data-ga-click="Footer, go to help, text:help" href="https://help.github.com/">Help</a></li>
+    </ul>
+
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mx-lg-4" href="https://github.com/">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+</a>
+   <ul class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+        <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to contact, text:contact" href="https://github.com/contact">Contact GitHub</a></li>
+        <li class="mr-3 mr-lg-0"><a href="https://github.com/pricing" data-ga-click="Footer, go to Pricing, text:Pricing">Pricing</a></li>
+      <li class="mr-3 mr-lg-0"><a href="https://developer.github.com/" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li class="mr-3 mr-lg-0"><a href="https://training.github.com/" data-ga-click="Footer, go to training, text:training">Training</a></li>
+        <li class="mr-3 mr-lg-0"><a href="https://github.blog/" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a data-ga-click="Footer, go to about, text:about" href="https://github.com/about">About</a></li>
+
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+</div>
+
+
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 000 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 00.01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg>
+    <button type="button" class="flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+    </button>
+    You can’t perform that action at this time.
+  </div>
+
+
+    <script crossorigin="anonymous" async="async" integrity="sha512-44n3wlGLuUccx54xJCLuPnISUrN43Yp0sjk/Hv2yNTT0J0Cpt/pwdOoBajrT0yBBx7R2yqHMx2GeyvewiI1b1g==" type="application/javascript" id="js-conditional-compat" data-src="https://github.githubassets.com/assets/compat-bootstrap-e389f7c2.js"></script>
+    <script crossorigin="anonymous" integrity="sha512-/geWUtCY7nt0pPqN/6s/PwNZo2a6E+3XMQ8N2oOzgbI33h8QNNltx//bqEVh4Y2Wu9KVP7BeYpZCiSrUbacLRQ==" type="application/javascript" src="./intro_git_files/frameworks-fe079652.js.下載"></script>
+    
+    <script crossorigin="anonymous" async="async" integrity="sha512-UUD6LDS3JPg9dVg/EgomWMxdvPIyxPCn3rktsOEb7C/ml89v9BCwaqAZSsTkqT/655tVPg8PcpWltOc1Z38O/g==" type="application/javascript" src="./intro_git_files/github-bootstrap-5140fa2c.js.下載"></script>
+    
+    
+    
+  <div class="js-stale-session-flash flash flash-warn flash-banner" hidden="">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 000 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 00.01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg>
+    <span class="js-stale-session-flash-signed-in" hidden="">You signed in with another tab or window. <a href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md">Reload</a> to refresh your session.</span>
+    <span class="js-stale-session-flash-signed-out" hidden="">You signed out in another tab or window. <a href="https://github.com/seankross/the-unix-workbench/blob/master/docs/06-Git-and-GitHub.md">Reload</a> to refresh your session.</span>
+  </div>
+  <template id="site-details-dialog"></template>
+
+  <div class="Popover js-hovercard-content position-absolute" style="display: none; outline: none;" tabindex="0">
+  <div class="Popover-message Popover-message--bottom-left Popover-message--large Box box-shadow-large" style="width:360px;">
+  </div>
+</div>
+
+  
+  <div class="js-notification-shelf-not-found-error" hidden=""></div>
+
+  <div aria-live="polite" class="js-global-screen-reader-notice sr-only"></div>
+
+  
+
+
+</body></html>
